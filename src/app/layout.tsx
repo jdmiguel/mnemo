@@ -1,7 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Open_Sans } from "next/font/google";
-import { Providers } from "./providers";
+import { TRPCReactProvider } from "@/trpc/react";
+import { Providers } from "@/app/providers";
 
 const openSans = Open_Sans({
   weight: ["300", "400", "600"],
@@ -21,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${openSans.className}`}>
-        <Providers>{children}</Providers>
+        <TRPCReactProvider headers={headers()}>
+          <Providers>{children}</Providers>
+        </TRPCReactProvider>
       </body>
     </html>
   );

@@ -1,5 +1,8 @@
+"use client";
+
 import { LockKeyhole, Mail } from "lucide-react";
-import { Button } from "@nextui-org/button";
+import { signIn } from "next-auth/react";
+import Button from "@/components/ui/Button";
 import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
 import Link from "@/components/ui/Link";
@@ -13,7 +16,7 @@ export default function SignForm({ type }: SignFormProps) {
 
   return (
     <>
-      <p className="mb-8  text-gray-400 dark:text-gray-200">
+      <p className="mb-8 flex gap-1 text-gray-400 dark:text-gray-200">
         {isSignInForm ? "Do not have an account?" : "Already have an account?"}
         <Link href={isSignInForm ? "./signup" : "./signin"}>
           {isSignInForm ? "Sign up" : "Sign in"}
@@ -37,18 +40,13 @@ export default function SignForm({ type }: SignFormProps) {
             />
           }
         />
-        <Button
-          color="primary"
-          className="hover:bg-primary-50"
-          fullWidth
-          radius="sm"
-        >
+        <Button color="primary" fullWidth radius="sm">
           {isSignInForm ? "Sign in" : "Sign up"}
         </Button>
         {!isSignInForm && (
           <div className="flex justify-between">
             <Checkbox size="sm">Remember me</Checkbox>
-            <Link href="./signin" size="small">
+            <Link href="./signin" textSize="small">
               Forgot Password?
             </Link>
           </div>
@@ -60,12 +58,7 @@ export default function SignForm({ type }: SignFormProps) {
           </span>
           <hr className="w-full border-gray-300" />
         </div>
-        <Button
-          color="primary"
-          className="hover:bg-primary-50"
-          fullWidth
-          radius="sm"
-        >
+        <Button color="primary" fullWidth radius="sm" onClick={() => signIn()}>
           Continue with Google
         </Button>
       </div>
