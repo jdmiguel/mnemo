@@ -8,7 +8,7 @@ type TopBarProps = {
 
 export default function TopBar({ section, user }: TopBarProps) {
   return (
-    <aside className="flex items-center justify-between border-b-1 border-gray-50 px-7 py-3 text-sm dark:border-black-50">
+    <aside className="dark:border-gray-700 flex items-center justify-between border-b-1 border-gray-50 px-7 py-3 text-sm">
       <p className="font-normal text-gray-400 dark:text-gray-200">{section}</p>
       <div className="flex gap-2">
         <Button

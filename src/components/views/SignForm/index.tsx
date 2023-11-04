@@ -16,23 +16,28 @@ export default function SignForm({ type }: SignFormProps) {
 
   return (
     <>
-      <p className="mb-8 flex gap-1 text-gray-400 dark:text-gray-200">
+      <h1 className="mb-2 text-3xl font-bold text-gray-500 dark:text-gray-100">
+        {isSignInForm ? "Welcome back" : "Create your account"}
+      </h1>
+      <p className="mb-10 flex gap-1 text-gray-500 dark:text-gray-200">
         {isSignInForm ? "Do not have an account?" : "Already have an account?"}
-        <Link href={isSignInForm ? "./signup" : "./signin"}>
+        <Link href={isSignInForm ? "./signup" : "./signin"} isTextOnly>
           {isSignInForm ? "Sign up" : "Sign in"}
         </Link>
       </p>
       <div className="flex w-full flex-col gap-3">
         <Input
           type="email"
-          placeholder="Email"
+          placeholder="example@gmail.com"
+          label="Email"
           startContent={
-            <Mail className="stroke-gray-400 dark:stroke-gray-200" size={15} />
+            <Mail className="stroke-gray-400 dark:stroke-gray-300" size={15} />
           }
         />
         <Input
           type="password"
-          placeholder="Password"
+          placeholder="············"
+          label="Password"
           startContent={
             <LockKeyhole
               className="stroke-gray-400 dark:stroke-gray-200"
@@ -46,7 +51,7 @@ export default function SignForm({ type }: SignFormProps) {
         {!isSignInForm && (
           <div className="flex justify-between">
             <Checkbox size="sm">Remember me</Checkbox>
-            <Link href="./signin" textSize="small">
+            <Link href="./signin" isTextOnly textSize="small">
               Forgot Password?
             </Link>
           </div>

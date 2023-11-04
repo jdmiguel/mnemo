@@ -9,7 +9,7 @@ export default function MnemoCheckbox(props: CheckboxProps) {
       size={props.size}
       classNames={{
         label:
-          "text-gray-300 dark:text-gray-300 font-normal hover:text-gray-200 dark:hover:text-gray-200",
+          "text-gray-400 dark:text-gray-300 font-normal hover:text-gray-200 dark:hover:text-gray-200",
       }}
     />
   );

@@ -15,7 +15,8 @@ export const enum COLORS {
   GRAY_300 = "#989FB1",
   GRAY_400 = "#757F98",
   GRAY_500 = "#5A6581",
-  BLACK_50 = "#353D51",
-  BLACK_100 = "#282F3F",
-  BLACK_200 = "#242531",
+  BLACK_50 = "#3E465C",
+  BLACK_100 = "#353D51",
+  BLACK_200 = "#282F3F",
+  BLACK_300 = "#242531",
 }

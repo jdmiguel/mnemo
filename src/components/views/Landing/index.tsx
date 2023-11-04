@@ -10,10 +10,10 @@ export default function Landing() {
       <div className="mt-4 flex flex-col">
         <MnemoHeader />
         <div className="mt-8 flex flex-col gap-3">
-          <Link color="primary" radius="sm" href="./signin">
+          <Link color="primary" radius="sm" href="./auth/signin">
             Log in
           </Link>
-          <Link color="secondary" radius="sm" href="./signup">
+          <Link color="secondary" radius="sm" href="./auth/signup">
             Sign up
           </Link>
         </div>
