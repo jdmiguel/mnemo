@@ -20,7 +20,10 @@ export default {
     },
     colors: {
       transparent: "transparent",
-      red: "#C72116",
+      red: {
+        50: "#C72116",
+        100: "#DB241C",
+      },
       orange: "#C85616",
       yellow: "#E3A82B",
       green: {
@@ -35,9 +38,10 @@ export default {
       white: {
         50: "#FFFFFF",
         100: "#F7F9FD",
+        200: "#E3E7F0",
       },
       gray: {
-        50: "#E3E7F0",
+        50: "#D4DAE6",
         100: "#CCD3E1",
         200: "#B7C0D1",
         300: "#989FB1",
@@ -45,8 +49,8 @@ export default {
         500: "#5A6581",
       },
       black: {
-        50: "#3E465C",
-        100: "#353D51",
+        50: "#353D51",
+        100: "#2F3648",
         200: "#282F3F",
         300: "#242531",
       },
@@ -76,6 +80,10 @@ export default {
               foreground: "#FFFFFF",
               DEFAULT: "#1DA098",
             },
+            danger: {
+              foreground: "#FFFFFF",
+              DEFAULT: "#C72116",
+            },
           },
         },
         dark: {
@@ -96,6 +104,10 @@ export default {
               50: "#29B8AF",
               foreground: "#FFFFFF",
               DEFAULT: "#1DA098",
+            },
+            danger: {
+              foreground: "#FFFFFF",
+              DEFAULT: "#DB241C",
             },
           },
         },
