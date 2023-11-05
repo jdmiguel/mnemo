@@ -8,6 +8,8 @@ import Button from "@/components/ui/Button";
 import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
 import Link from "@/components/ui/Link";
+import { api } from "@/trpc/react";
+import { type UserRegisterData } from "@/types/user";
 
 type SignFormProps = {
   type: "signIn" | "signUp";
@@ -15,8 +17,6 @@ type SignFormProps = {
 
 export default function SignForm({ type }: SignFormProps) {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] =
-    useState(false);
   const {
     register,
     handleSubmit,
@@ -25,13 +25,14 @@ export default function SignForm({ type }: SignFormProps) {
 
   const isSignUpForm = type === "signUp";
 
-  const onSubmit = handleSubmit((data) => {
-    console.log("onSubmit");
-    console.log({ data });
+  const createUser = api.user.create.useMutation({
+    onSuccess: () => console.log("on success"),
+  });
 
-    if (data.password !== data.confirmPassword) {
-      return alert("Passwords do not match");
-    }
+  const onSubmit = handleSubmit((data) => {
+    console.log("data from sing form: ", data);
+
+    createUser.mutate(data as UserRegisterData);
   });
 
   return (
@@ -60,12 +61,12 @@ export default function SignForm({ type }: SignFormProps) {
                     size={15}
                   />
                 }
-                isInvalid={Boolean(errors.username)}
-                errorMessage={errors.username?.message as string}
-                {...register("username", {
+                isInvalid={Boolean(errors.name)}
+                errorMessage={errors.name?.message as string}
+                {...register("name", {
                   required: {
                     value: true,
-                    message: "Please enter a valid username",
+                    message: "Please enter a valid name",
                   },
                 })}
               />
@@ -144,53 +145,6 @@ export default function SignForm({ type }: SignFormProps) {
               },
             })}
           />
-          {isSignUpForm && (
-            <Input
-              type={isConfirmPasswordVisible ? "text" : "password"}
-              id="confirmPassword"
-              label="Confirm password"
-              placeholder="············"
-              startContent={
-                <LockKeyhole
-                  className="stroke-gray-400 dark:stroke-gray-200"
-                  size={15}
-                />
-              }
-              endContent={
-                <button
-                  className="focus:outline-none"
-                  type="button"
-                  onClick={() =>
-                    setIsConfirmPasswordVisible(
-                      (prevIsVisible) => !prevIsVisible,
-                    )
-                  }
-                >
-                  {isConfirmPasswordVisible ? (
-                    <EyeOffIcon
-                      className="stroke-gray-400 dark:stroke-gray-200"
-                      size={15}
-                    />
-                  ) : (
-                    <EyeIcon
-                      className="stroke-gray-400 dark:stroke-gray-200"
-                      size={15}
-                    />
-                  )}
-                </button>
-              }
-              isInvalid={Boolean(errors.confirmPassword)}
-              errorMessage={errors.confirmPassword?.message as string}
-              {...register("confirmPassword", {
-                required: {
-                  value: true,
-                  message: "Please enter the same password as above",
-                },
-                validate: (value: string, formValues) =>
-                  value === formValues.password,
-              })}
-            />
-          )}
           <Button type="submit" color="primary" fullWidth radius="sm">
             {isSignUpForm ? "Sign up" : "Sign in"}
           </Button>
