@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function MnemoHeader() {
   return (
     <header className="flex flex-col items-center">
-      <h1 className="mb-4">
+      <h1 className="mb-3">
         <Image
           className="w-80 sm:w-auto"
           src="./logo.svg"

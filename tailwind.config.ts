@@ -1,6 +1,50 @@
 import { nextui } from "@nextui-org/theme";
 import { type Config } from "tailwindcss";
 
+interface GridStyles {
+  gridColumn: Record<string, string>;
+  gridTemplateColumns: Record<number, string>;
+  gridRow: Record<string, string>;
+  gridTemplateRows: Record<number, string>;
+  gridRowStart: Record<number, string>;
+  gridRowEnd: Record<number, string>;
+  gridColumnStart: Record<number, string>;
+  gridColumnEnd: Record<number, string>;
+}
+
+const generateGrid = (size: number): GridStyles => {
+  const gridColumn: Record<string, string> = {};
+  const gridTemplateColumns: Record<number, string> = {};
+  const gridRow: Record<string, string> = {};
+  const gridTemplateRows: Record<number, string> = {};
+  const gridRowStart: Record<number, string> = {};
+  const gridRowEnd: Record<number, string> = {};
+  const gridColumnStart: Record<number, string> = {};
+  const gridColumnEnd: Record<number, string> = {};
+
+  for (let i = 1; i <= size; i++) {
+    gridRow[`span-${i}`] = `span ${i} / span ${i}`;
+    gridColumn[`span-${i}`] = `span ${i} / span ${i}`;
+    gridTemplateColumns[i] = `repeat(${i}, minmax(0, 1fr))`;
+    gridTemplateRows[i] = `repeat(${i}, minmax(0, 1fr))`;
+    gridRowStart[i] = `${i}`;
+    gridRowEnd[i] = `${i}`;
+    gridColumnStart[i] = `${i}`;
+    gridColumnEnd[i] = `${i}`;
+  }
+
+  return {
+    gridColumn,
+    gridTemplateColumns,
+    gridRow,
+    gridTemplateRows,
+    gridRowStart,
+    gridRowEnd,
+    gridColumnStart,
+    gridColumnEnd,
+  };
+};
+
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,6 +53,7 @@ export default {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    ...generateGrid(24),
     fontSize: {
       sm: "0.85rem",
       base: "1rem",
