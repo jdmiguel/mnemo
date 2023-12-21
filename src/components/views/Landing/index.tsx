@@ -14,7 +14,7 @@ export default function Landing() {
           width={360}
           height={90}
         />
-        <p className="text-lg text-center font-light text-gray-500 sm:text-2xl lg:text-left 2xl:text-3xl">
+        <p className="!text-pretty text-center text-lg font-light text-gray-500 sm:text-2xl lg:text-left 2xl:text-3xl">
           Welcome to Mnemo, the ultimate solution for managing all your tasks in
           one accesible place
         </p>
