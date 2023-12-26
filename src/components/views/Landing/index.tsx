@@ -6,7 +6,7 @@ import Link from "@/components/ui/Link";
 export default function Landing() {
   return (
     <div className="grid h-auto grid-cols-24 gap-x-1 gap-y-16 pt-16 sm:gap-y-20 sm:px-0 lg:gap-y-12 2xl:pt-20">
-      <div className="order-none col-start-3 col-end-23 flex flex-col gap-6 self-center md:col-start-5 md:col-end-21 lg:order-first lg:col-start-2 lg:col-end-11 xl:col-start-3 2xl:col-start-5 2xl:col-end-12">
+      <div className="order-none col-start-3 col-end-23 -mt-10 flex flex-col gap-6 self-center md:col-start-5 md:col-end-21 lg:order-first lg:col-start-2 lg:col-end-11 lg:mt-0 xl:col-start-3 2xl:col-start-5 2xl:col-end-12">
         <Image
           className="w-full"
           src="./logo.svg"
@@ -88,7 +88,7 @@ export default function Landing() {
       </div>
       <footer className="col-span-24 col-start-1 flex w-full justify-center justify-self-center bg-gray-50 p-6 text-sm text-gray-500 sm:text-base">
         <p>
-          @2023 | created by{" "}
+          @2024 | created by{" "}
           <a
             href="https:jdmiguel.com"
             target="blank"
