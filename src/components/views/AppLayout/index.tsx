@@ -11,7 +11,7 @@ export default function AppLayout({ section, children }: AppLayoutProps) {
     <div className="flex h-screen">
       <Menu />
       <div className="flex flex-1 flex-col">
-        <TopBar section={section} user="jdmiguel" />
+        <TopBar section={section} />
         {children}
       </div>
     </div>

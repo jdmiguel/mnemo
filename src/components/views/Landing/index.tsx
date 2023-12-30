@@ -86,7 +86,7 @@ export default function Landing() {
           with ease
         </p>
       </div>
-      <footer className="col-span-24 col-start-1 flex w-full justify-center justify-self-center bg-gray-50 p-6 text-sm text-gray-500 sm:text-base">
+      <footer className="sm:text-md col-span-24 col-start-1 flex w-full justify-center justify-self-center bg-gray-50 p-6 text-sm text-gray-500">
         <p>
           @2024 | created by{" "}
           <a

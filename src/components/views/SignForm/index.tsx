@@ -5,7 +5,7 @@ import { LockKeyhole, Mail, User, EyeIcon, EyeOffIcon } from "lucide-react";
 import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import Button from "@/components/ui/Button";
-import Checkbox from "@/components/ui/Checkbox";
+// import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
 import Link from "@/components/ui/Link";
 import { api } from "@/trpc/react";
@@ -149,24 +149,33 @@ export default function SignForm({ type }: SignFormProps) {
             {isSignUpForm ? "Sign up" : "Sign in"}
           </Button>
         </form>
-        {!isSignUpForm && (
+        {/*!isSignUpForm && (
           <div className="flex justify-between">
             <Checkbox size="sm">Remember me</Checkbox>
             <Link href="./signin" isTextOnly textSize="small">
               Forgot Password?
             </Link>
           </div>
+        )*/}
+        {!isSignUpForm && (
+          <>
+            <div className="mt-1 flex items-center gap-4">
+              <hr className="w-full border-gray-300" />
+              <span className="text-sm font-normal text-gray-400 dark:text-gray-300">
+                OR
+              </span>
+              <hr className="w-full border-gray-300" />
+            </div>
+            <Button
+              color="primary"
+              fullWidth
+              radius="sm"
+              onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+            >
+              Continue with Google
+            </Button>
+          </>
         )}
-        <div className="mt-4 flex items-center gap-4">
-          <hr className="w-full border-gray-300" />
-          <span className="text-sm font-normal text-gray-400 dark:text-gray-300">
-            OR
-          </span>
-          <hr className="w-full border-gray-300" />
-        </div>
-        <Button color="primary" fullWidth radius="sm" onClick={() => signIn()}>
-          Continue with Google
-        </Button>
       </div>
     </>
   );

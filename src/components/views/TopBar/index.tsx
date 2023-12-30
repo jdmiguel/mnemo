@@ -1,16 +1,23 @@
+"use client";
+
+import { signIn, signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 import { Button } from "@nextui-org/button";
-import { Sun, UserCircle2 } from "lucide-react";
+import { Sun } from "lucide-react";
 
 type TopBarProps = {
   section: string;
-  user: string;
 };
 
-export default function TopBar({ section, user }: TopBarProps) {
+export default function TopBar({ section }: TopBarProps) {
+  const { data: session } = useSession();
+
   return (
     <aside className="dark:border-gray-700 flex items-center justify-between border-b-1 border-gray-50 px-7 py-3 text-sm">
-      <p className="font-normal text-gray-400 dark:text-gray-200">{section}</p>
-      <div className="flex gap-2">
+      <p className="text-md font-normal text-gray-400 dark:text-gray-200">
+        {section}
+      </p>
+      <div className="flex">
         <Button
           color="primary"
           variant="light"
@@ -19,9 +26,33 @@ export default function TopBar({ section, user }: TopBarProps) {
         >
           <Sun />
         </Button>
-        <Button color="primary" variant="light" startContent={<UserCircle2 />}>
-          {user}
-        </Button>
+        {session?.user ? (
+          <>
+            <Button
+              color="primary"
+              variant="light"
+              onClick={() => signOut({ callbackUrl: "/" })}
+            >
+              Sign out
+            </Button>
+            <div className="ml-3 flex items-center gap-2">
+              <Image
+                src={session.user.image ?? ""}
+                alt={session.user.name ?? ""}
+                width={36}
+                height={36}
+                className="h-9 w-9   rounded-full"
+              />
+              <p className="text-md font-normal text-gray-500">
+                {session.user.name}
+              </p>
+            </div>
+          </>
+        ) : (
+          <Button color="primary" variant="light" onClick={() => signIn()}>
+            Sign in
+          </Button>
+        )}
       </div>
     </aside>
   );
