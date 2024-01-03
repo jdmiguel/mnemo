@@ -1,5 +1,7 @@
 import { z } from "zod";
+import { hash } from "bcrypt";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
+import { TRPCError } from "@trpc/server";
 
 export const userRouter = createTRPCRouter({
   create: publicProcedure
@@ -10,20 +12,26 @@ export const userRouter = createTRPCRouter({
         password: z.string().min(8),
       }),
     )
-    .mutation(({ ctx, input }) => {
-      return ctx.db.user.create({
+    .mutation(async ({ ctx, input }) => {
+      const { name, email, password } = input;
+      const existingUserByEmail = await ctx.db.user.findUnique({
+        where: { email },
+      });
+
+      if (existingUserByEmail) {
+        throw new TRPCError({ code: "CONFLICT" });
+      }
+
+      const hashedPassword = await hash(password, 10);
+
+      await ctx.db.user.create({
         data: {
-          name: input.name,
-          email: input.email,
-          password: input.password,
+          name,
+          email,
+          password: hashedPassword,
         },
       });
-    }),
 
-  /*  getUser: protectedProcedure.query(({ ctx }) => {
-    return ctx.db.post.findFirst({
-      orderBy: { createdAt: "desc" },
-      where: { createdBy: { id: ctx.session.user.id } },
-    });
-  }), */
+      return { success: true };
+    }),
 });

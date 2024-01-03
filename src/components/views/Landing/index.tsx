@@ -1,9 +1,18 @@
 "use client";
 
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "@/components/ui/Link";
 
 export default function Landing() {
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  if (session?.user) {
+    router.push("/dashboard");
+  }
+
   return (
     <div className="grid h-auto grid-cols-24 gap-x-1 gap-y-16 pt-16 sm:gap-y-20 sm:px-0 lg:gap-y-12 2xl:pt-20">
       <div className="order-none col-start-3 col-end-23 -mt-10 flex flex-col gap-6 self-center md:col-start-5 md:col-end-21 lg:order-first lg:col-start-2 lg:col-end-11 lg:mt-0 xl:col-start-3 2xl:col-start-5 2xl:col-end-12">

@@ -12,6 +12,8 @@ type TopBarProps = {
 export default function TopBar({ section }: TopBarProps) {
   const { data: session } = useSession();
 
+  const hasUserImage = session?.user?.image;
+
   return (
     <aside className="dark:border-gray-700 flex items-center justify-between border-b-1 border-gray-50 px-7 py-3 text-sm">
       <p className="text-md font-normal text-gray-400 dark:text-gray-200">
@@ -35,14 +37,20 @@ export default function TopBar({ section }: TopBarProps) {
             >
               Sign out
             </Button>
-            <div className="ml-3 flex items-center gap-2">
-              <Image
-                src={session.user.image ?? ""}
-                alt={session.user.name ?? ""}
-                width={36}
-                height={36}
-                className="h-9 w-9   rounded-full"
-              />
+            <div className="ml-6 flex items-center gap-2">
+              {hasUserImage ? (
+                <Image
+                  src={session.user.image ?? ""}
+                  alt={session.user.name ?? ""}
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 rounded-full"
+                />
+              ) : (
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-500 text-md font-extrabold uppercase text-white-200">
+                  {session.user.name?.substring(0, 2)}
+                </span>
+              )}
               <p className="text-md font-normal text-gray-500">
                 {session.user.name}
               </p>
