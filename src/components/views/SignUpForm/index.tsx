@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { toast } from "react-toastify";
 import { api } from "@/trpc/react";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
@@ -37,7 +38,15 @@ export default function SignUpForm() {
 
   const createUser = api.user.create.useMutation({
     onSuccess: () => {
-      router.push("/dashboard");
+      toast.success("User created successfully", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 3000,
+      });
+
+      router.push("/auth/signin");
+    },
+    onError: () => {
+      throw new Error("Error creating user");
     },
   });
 
