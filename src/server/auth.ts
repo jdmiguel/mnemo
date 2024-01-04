@@ -76,13 +76,15 @@ export const authOptions: NextAuthOptions = {
           throw new Error("No user found with this email address");
         }
 
-        const isMatchedPassword = await compare(
-          credentials.password,
-          existingUser.password!,
-        );
+        if (existingUser.password) {
+          const isMatchedPassword = await compare(
+            credentials.password,
+            existingUser.password,
+          );
 
-        if (!isMatchedPassword) {
-          throw new Error("Incorrect password");
+          if (!isMatchedPassword) {
+            throw new Error("Incorrect password");
+          }
         }
 
         return {
@@ -95,13 +97,6 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
       clientSecret: env.GOOGLE_CLIENT_SECRET,
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
     }),
     /**
      * ...add more providers here.
