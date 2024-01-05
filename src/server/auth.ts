@@ -4,10 +4,16 @@ import {
   getServerSession,
   type DefaultSession,
   type NextAuthOptions,
+  type Account,
+  type Profile,
+  type Session,
+  type User,
 } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { compare } from "bcrypt";
+import { type JWT } from "next-auth/jwt";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 import { env } from "@/env.mjs";
 import { db } from "@/server/db";
 
@@ -38,30 +44,15 @@ declare module "next-auth" {
  * @see https://next-auth.js.org/configuration/options
  */
 export const authOptions: NextAuthOptions = {
-  /*  callbacks: {
-    session: ({ session, user }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: user.id,
-      },
-    }),
-  }, */
   adapter: PrismaAdapter(db),
-  pages: {
-    signIn: "/auth/signin",
-  },
-  session: {
-    strategy: "jwt",
-  },
   providers: [
     CredentialsProvider({
       name: "Credentials",
       credentials: {
         email: {
           label: "Email",
-          type: "email",
-          placeholder: "johndoe@gmail.com",
+          type: "text",
+          placeholder: "your@email.com",
         },
         password: { label: "Password", type: "password" },
       },
@@ -77,7 +68,7 @@ export const authOptions: NextAuthOptions = {
         }
 
         if (existingUser.password) {
-          const isMatchedPassword = await compare(
+          const isMatchedPassword = bcrypt.compareSync(
             credentials.password,
             existingUser.password,
           );
@@ -87,11 +78,7 @@ export const authOptions: NextAuthOptions = {
           }
         }
 
-        return {
-          id: existingUser.id,
-          name: existingUser.name,
-          email: existingUser.email,
-        };
+        return existingUser;
       },
     }),
     GoogleProvider({
@@ -115,25 +102,54 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+  pages: {
+    signIn: "/auth/signin",
+  },
+  secret: env.NEXTAUTH_SECRET,
+  jwt: {
+    async encode({ secret, token }) {
+      if (!token) {
+        throw new Error("No token to encode");
+      }
+      return jwt.sign(token, secret);
+    },
+    async decode({ secret, token }) {
+      if (!token) {
+        throw new Error("No token to decode");
+      }
+      const decodedToken = jwt.verify(token, secret);
+      if (typeof decodedToken === "string") {
+        return JSON.parse(decodedToken);
+      } else {
+        return decodedToken;
+      }
+    },
+  },
+  session: {
+    strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60,
+    updateAge: 24 * 60 * 60,
+  },
   callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        return {
-          ...token,
-          name: user.name,
-        };
+    async session(params: { session: Session; token: JWT; user: User }) {
+      if (params.session.user) {
+        params.session.user.email = params.token.email;
       }
 
-      return token;
+      return params.session;
     },
-    async session({ session, token }) {
-      return {
-        ...session,
-        user: {
-          ...session.user,
-          name: token.name,
-        },
-      };
+    async jwt(params: {
+      token: JWT;
+      user?: User | undefined;
+      account?: Account | null | undefined;
+      profile?: Profile | undefined;
+      isNewUser?: boolean | undefined;
+    }) {
+      if (params.user) {
+        params.token.email = params.user.email;
+      }
+
+      return params.token;
     },
   },
 };

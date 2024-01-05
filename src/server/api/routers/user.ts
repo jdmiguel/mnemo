@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { hash } from "bcrypt";
+import bcrypt from "bcrypt";
 import { createTRPCRouter, publicProcedure } from "@/server/api/trpc";
 import { TRPCError } from "@trpc/server";
 
@@ -22,7 +22,7 @@ export const userRouter = createTRPCRouter({
         throw new TRPCError({ code: "CONFLICT" });
       }
 
-      const hashedPassword = await hash(password, 10);
+      const hashedPassword = bcrypt.hashSync(password, 10);
 
       await ctx.db.user.create({
         data: {
