@@ -20,6 +20,7 @@ const SignUpSchema = z.object({
 
 export default function SignUpForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isSignupLoading, setIsSignupLoading] = useState(false);
 
   const {
     register,
@@ -49,9 +50,13 @@ export default function SignUpForm() {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
     },
+    onSettled: () => {
+      setIsSignupLoading(false);
+    },
   });
 
   const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
+    setIsSignupLoading(true);
     createUser.mutate(values);
   };
 
@@ -164,7 +169,13 @@ export default function SignUpForm() {
               },
             })}
           />
-          <Button type="submit" color="primary" fullWidth radius="sm">
+          <Button
+            type="submit"
+            color="primary"
+            fullWidth
+            radius="sm"
+            isLoading={isSignupLoading}
+          >
             Sign up
           </Button>
         </form>
