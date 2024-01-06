@@ -11,7 +11,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <NextUIProvider>
       <SessionProvider>
         <div className="bg-background">{children}</div>
-        <ToastContainer />
+        <ToastContainer toastClassName="text-md" />
       </SessionProvider>
     </NextUIProvider>
   );

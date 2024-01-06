@@ -7,6 +7,7 @@ import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import { toast } from "react-toastify";
 import Button from "@/components/ui/Button";
 // import Checkbox from "@/components/ui/Checkbox";
 import Input from "@/components/ui/Input";
@@ -19,7 +20,9 @@ const SignInSchema = z.object({
 
 export default function SignInForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-  const [signInError, setSignInError] = useState("");
+  const [isCredentialsSigninLoading, setIsCredentialsSigninLoading] =
+    useState(false);
+  const [isGoogleSigninLoading, setIsGoogleSigninLoading] = useState(false);
 
   const {
     register,
@@ -36,7 +39,7 @@ export default function SignInForm() {
   const router = useRouter();
 
   const onSubmit = async (values: z.infer<typeof SignInSchema>) => {
-    setSignInError("");
+    setIsCredentialsSigninLoading(true);
 
     const signinData = await signIn("credentials", {
       email: values.email,
@@ -44,12 +47,38 @@ export default function SignInForm() {
       redirect: false,
     });
 
+    setIsCredentialsSigninLoading(false);
+
     if (signinData?.error) {
-      setSignInError(signinData?.error);
+      toast.error(signinData.error, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
       return;
     }
 
     router.push("/dashboard");
+  };
+
+  const onClickGoogleSignIn = async () => {
+    setIsGoogleSigninLoading(true);
+
+    try {
+      await signIn("google", { callbackUrl: "/dashboard" });
+
+      setIsGoogleSigninLoading(false);
+    } catch (error) {
+      const errorMessage =
+        error instanceof Error
+          ? error.message
+          : "500 error, please try again later";
+
+      toast.error(errorMessage, {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 3000,
+      });
+
+      setIsGoogleSigninLoading(false);
+    }
   };
 
   return (
@@ -141,14 +170,15 @@ export default function SignInForm() {
               },
             })}
           />
-          <Button type="submit" color="primary" fullWidth radius="sm">
+          <Button
+            type="submit"
+            color="primary"
+            fullWidth
+            radius="sm"
+            isLoading={isCredentialsSigninLoading}
+          >
             Sign in
           </Button>
-          {signInError && (
-            <p className="text-center text-md font-bold text-red-50">
-              {signInError}
-            </p>
-          )}
         </form>
         {/*!isSignUpForm && (
           <div className="flex justify-between">
@@ -169,7 +199,8 @@ export default function SignInForm() {
           color="primary"
           fullWidth
           radius="sm"
-          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+          onClick={onClickGoogleSignIn}
+          isLoading={isGoogleSigninLoading}
         >
           Continue with Google
         </Button>

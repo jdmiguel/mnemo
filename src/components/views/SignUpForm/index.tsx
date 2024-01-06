@@ -40,13 +40,14 @@ export default function SignUpForm() {
     onSuccess: () => {
       toast.success("User created successfully", {
         position: toast.POSITION.BOTTOM_RIGHT,
-        autoClose: 3000,
       });
 
       router.push("/auth/signin");
     },
     onError: () => {
-      throw new Error("Error creating user");
+      toast.error("Error creating user", {
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
     },
   });
 
