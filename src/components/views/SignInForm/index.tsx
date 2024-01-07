@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { LockKeyhole, Mail, EyeIcon, EyeOffIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -36,6 +36,9 @@ export default function SignInForm() {
     },
   });
 
+  const searchParams = useSearchParams();
+  const pageParam = searchParams.get("page");
+
   const router = useRouter();
 
   const onSubmit = async (values: z.infer<typeof SignInSchema>) => {
@@ -56,7 +59,8 @@ export default function SignInForm() {
       return;
     }
 
-    router.push("/dashboard");
+    const redirectUrl = pageParam || "/dashboard";
+    router.push(redirectUrl);
   };
 
   const onClickGoogleSignIn = async () => {
@@ -180,14 +184,14 @@ export default function SignInForm() {
             Sign in
           </Button>
         </form>
-        {/*!isSignUpForm && (
+        {/*
           <div className="flex justify-between">
             <Checkbox size="sm">Remember me</Checkbox>
             <Link href="./signin" isTextOnly textSize="small">
               Forgot Password?
             </Link>
           </div>
-        )*/}
+          */}
         <div className="mt-1 flex items-center gap-4">
           <hr className="w-full border-gray-300" />
           <span className="text-sm font-normal text-gray-400 dark:text-gray-300">

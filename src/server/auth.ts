@@ -12,7 +12,6 @@ import {
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 import { type JWT } from "next-auth/jwt";
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { env } from "@/env.mjs";
 import { db } from "@/server/db";
@@ -106,25 +105,6 @@ export const authOptions: NextAuthOptions = {
     signIn: "/auth/signin",
   },
   secret: env.NEXTAUTH_SECRET,
-  jwt: {
-    async encode({ secret, token }) {
-      if (!token) {
-        throw new Error("No token to encode");
-      }
-      return jwt.sign(token, secret);
-    },
-    async decode({ secret, token }) {
-      if (!token) {
-        throw new Error("No token to decode");
-      }
-      const decodedToken = jwt.verify(token, secret);
-      if (typeof decodedToken === "string") {
-        return JSON.parse(decodedToken);
-      } else {
-        return decodedToken;
-      }
-    },
-  },
   session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60,
