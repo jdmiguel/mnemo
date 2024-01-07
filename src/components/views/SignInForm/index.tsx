@@ -38,6 +38,7 @@ export default function SignInForm() {
 
   const searchParams = useSearchParams();
   const pageParam = searchParams.get("page");
+  const redirectUrl = pageParam || "/dashboard";
 
   const router = useRouter();
 
@@ -59,7 +60,6 @@ export default function SignInForm() {
       return;
     }
 
-    const redirectUrl = pageParam || "/dashboard";
     router.push(redirectUrl);
   };
 
@@ -67,7 +67,7 @@ export default function SignInForm() {
     setIsGoogleSigninLoading(true);
 
     try {
-      await signIn("google", { callbackUrl: "/dashboard" });
+      await signIn("google", { callbackUrl: redirectUrl });
 
       setIsGoogleSigninLoading(false);
     } catch (error) {
