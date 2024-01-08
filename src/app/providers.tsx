@@ -9,7 +9,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <NextUIProvider>
       <SessionProvider>
-        <div className="bg-background">{children}</div>
+        <div className="h-svh bg-background">{children}</div>
         <ToastContainer toastClassName="text-md" />
       </SessionProvider>
     </NextUIProvider>
