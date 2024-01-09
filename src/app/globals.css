@@ -2,6 +2,54 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  font-weight: 300;
+@layer base {
+  .heading-1 {
+    @apply text-3xl;
+    @apply font-medium;
+    @apply text-black-200;
+    @apply dark:text-white-200;
+  }
+  .heading-2 {
+    @apply text-2xl;
+    @apply font-medium;
+    @apply text-black-200;
+    @apply dark:text-white-200;
+  }
+  .heading-3 {
+    @apply text-xl;
+    @apply font-medium;
+    @apply text-black-200;
+    @apply dark:text-white-200;
+  }
+
+  .heading-4 {
+    @apply uppercase;
+    @apply font-medium;
+    @apply text-black-200;
+    @apply dark:text-white-200;
+  }
+
+  .description-text {
+    @apply text-lg;
+    @apply font-normal;
+    @apply text-black-50;
+    @apply dark:text-gray-50;
+    @apply text-balance;
+  }
+
+  .detail-text {
+    @apply text-sm;
+    @apply font-normal;
+    @apply text-gray-500;
+    @apply dark:text-gray-200;
+    @apply text-balance;
+  }
+
+  .link {
+    @apply text-lg;
+    @apply font-normal;
+    @apply text-purple-100;
+    @apply transition-colors;
+    @apply hover:text-purple-50;
+  }
 }

@@ -54,50 +54,6 @@ export default {
   ],
   theme: {
     ...generateGrid(24),
-    fontSize: {
-      sm: [
-        "0.87rem",
-        {
-          lineHeight: "1.08rem",
-          fontWeight: "300",
-        },
-      ],
-      md: [
-        "1em",
-        {
-          lineHeight: "1.4rem",
-          fontWeight: "300",
-        },
-      ],
-      lg: [
-        "1.25rem",
-        {
-          lineHeight: "2rem",
-          fontWeight: "300",
-        },
-      ],
-      xl: [
-        "1.5rem",
-        {
-          lineHeight: "1.85rem",
-          fontWeight: "300",
-        },
-      ],
-      "2xl": [
-        "1.8rem",
-        {
-          lineHeight: "2.2rem",
-          fontWeight: "300",
-        },
-      ],
-      "3xl": [
-        "2.23rem",
-        {
-          lineHeight: "3rem",
-          fontWeight: "300",
-        },
-      ],
-    },
     colors: {
       transparent: "transparent",
       red: {

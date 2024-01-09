@@ -6,7 +6,7 @@ import { TRPCReactProvider } from "@/trpc/react";
 import { Providers } from "@/app/providers";
 
 const openSans = Open_Sans({
-  weight: ["300", "400"],
+  weight: ["400", "500"],
   subsets: ["latin"],
 });
 
@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${openSans.className} text-md`}>
+      <body className={`${openSans.className}`}>
         <TRPCReactProvider headers={headers()}>
           <Providers>{children}</Providers>
         </TRPCReactProvider>

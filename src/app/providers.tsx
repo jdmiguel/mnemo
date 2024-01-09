@@ -10,7 +10,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <NextUIProvider>
       <SessionProvider>
         <div className="h-svh bg-background">{children}</div>
-        <ToastContainer toastClassName="text-md" />
+        <ToastContainer />
       </SessionProvider>
     </NextUIProvider>
   );

@@ -62,10 +62,8 @@ export default function SignUpForm() {
 
   return (
     <>
-      <h1 className="mb-2 text-3xl font-bold text-gray-500 dark:text-gray-100">
-        Create your account
-      </h1>
-      <p className="mb-10 flex gap-1 text-gray-500 dark:text-gray-200">
+      <h1 className="heading-1 mb-2">Create your account</h1>
+      <p className="description-text mb-10 flex gap-1">
         Already have an account?
         <Link href="./signin" isTextOnly>
           Sign in

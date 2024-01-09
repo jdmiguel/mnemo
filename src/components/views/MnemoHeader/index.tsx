@@ -12,9 +12,7 @@ export default function MnemoHeader() {
           height={90}
         />
       </h1>
-      <h2 className="text-xl font-light text-gray-400 sm:text-2xl">
-        All your reminders in one place
-      </h2>
+      <h2 className="heading-2">All your reminders in one place</h2>
     </header>
   );
 }
