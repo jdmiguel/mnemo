@@ -65,7 +65,7 @@ export default function SignUpForm() {
       <h1 className="heading-1 mb-2">Create your account</h1>
       <p className="text-1 mb-10 flex gap-1">
         Already have an account?
-        <Link href="./signin" isTextOnly>
+        <Link href="./signin" isTextOnly className="link">
           Sign in
         </Link>
       </p>

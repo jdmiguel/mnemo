@@ -90,7 +90,7 @@ export default function SignInForm() {
       <h1 className="heading-1 mb-2">Welcome back</h1>
       <p className="text-1 mb-10 flex gap-1">
         Do not have an account?
-        <Link href="./signup" isTextOnly>
+        <Link href="./signup" isTextOnly className="link">
           Sign up
         </Link>
       </p>

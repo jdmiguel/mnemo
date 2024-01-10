@@ -11,7 +11,7 @@ export default function MnemoButton(props: MnemoButtonProps) {
   return (
     <Button
       color={props.color ?? "primary"}
-      className={clsx("hover:bg-primary-50", {
+      className={clsx(["hover:bg-green-100"], {
         "hover:bg-secondary-50": props.color === "secondary",
       })}
       {...props}

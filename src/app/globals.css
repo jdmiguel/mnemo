@@ -48,8 +48,9 @@
   .link {
     @apply text-lg;
     @apply font-normal;
-    @apply text-purple-100;
+    @apply text-purple-200;
+    @apply dark:text-purple-50;
+    @apply hover:text-green-100;
     @apply transition-colors;
-    @apply hover:text-purple-50;
   }
 }

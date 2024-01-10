@@ -67,9 +67,9 @@ export default {
         100: "#1DA098",
       },
       purple: {
-        50: "#5B5FAE",
+        50: "#7B80E1",
         100: "#656AC5",
-        200: "#7B80E1",
+        200: "#5B5FAE",
       },
       white: {
         50: "#FFFFFF",
@@ -102,14 +102,14 @@ export default {
             background: "#F7F9FD",
             foreground: "#E3E7F0",
             primary: {
-              50: "#656AC5",
-              foreground: "#F7F9FD",
+              50: "#1DA098",
+              foreground: "#FFFFFF",
               DEFAULT: "#5B5FAE",
             },
             secondary: {
-              50: "#989FB1",
+              50: "#1DA098",
               foreground: "#FFFFFF",
-              DEFAULT: "#757F98",
+              DEFAULT: "#5A6581",
             },
             success: {
               50: "#29B8AF",
@@ -127,12 +127,12 @@ export default {
             background: "#242531",
             foreground: "#5A6581",
             primary: {
-              50: "#656AC5",
-              foreground: "#F7F9FD",
+              50: "#1DA098",
+              foreground: "#FFFFFF",
               DEFAULT: "#5B5FAE",
             },
             secondary: {
-              50: "#757F98",
+              50: "#1DA098",
               foreground: "#FFFFFF",
               DEFAULT: "#5A6581",
             },
