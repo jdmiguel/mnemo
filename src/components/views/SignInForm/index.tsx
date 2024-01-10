@@ -196,7 +196,7 @@ export default function SignInForm() {
           <hr className="w-full border-gray-300" />
         </div>
         <Button
-          color="primary"
+          color="secondary"
           fullWidth
           radius="sm"
           onClick={onClickGoogleSignIn}
