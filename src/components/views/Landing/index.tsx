@@ -29,10 +29,10 @@ export default function Landing() {
           <h2 className="heading-1 text-center lg:text-left">
             Streamline your tasks effectively
           </h2>
-          <p className="description-text text-center lg:text-left">
+          <p className="text-1 text-center lg:text-left">
             Discover Mnemo, your go-to solution for seamless task management.
-            Unify all your tasks in only one accessible platform, simplifying
-            your workflow. Elevate your efficiency with the power of Mnemo
+            Unify all your tasks in one accessible platform, simplifying and
+            enhacing your workflow
           </p>
           <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:[&_a]:flex-1">
             <Link color="primary" radius="sm" href="./auth/signin">
@@ -60,7 +60,7 @@ export default function Landing() {
             className="mb-4 w-full lg:col-start-15 lg:col-end-24 xl:col-start-14"
           />
           <h3 className="heading-2 mb-2">Notes and Todos</h3>
-          <p className="description-text text-center">
+          <p className="text-1 text-center">
             Capture thoughts effortlessly, stay organized: Intuitive note-taking
             feature for to-do lists, and never missing a task
           </p>
@@ -74,7 +74,7 @@ export default function Landing() {
             className="mb-4 w-full lg:col-start-15 lg:col-end-24 xl:col-start-14"
           />
           <h3 className="heading-2 mb-2">Kanban Boards</h3>
-          <p className="description-text text-center">
+          <p className="text-1 text-center">
             Visualize workflow, boost collaboration using Kanban boards, and
             track tasks for enhanced productivity
           </p>
@@ -88,13 +88,13 @@ export default function Landing() {
             className="mb-4 w-full lg:col-start-15 lg:col-end-24 xl:col-start-14"
           />
           <h3 className="heading-2 mb-2">Personal calendar</h3>
-          <p className="description-text text-center">
+          <p className="text-1 text-center">
             Master your schedule: Plan events, set reminders, and organize time
             effortlessly with our interactive calendar
           </p>
         </div>
       </div>
-      <footer className="description-text col-start-3 col-end-23 flex w-full flex-col items-center justify-center bg-gray-50 p-6 sm:flex-row">
+      <footer className="text-1 col-start-3 col-end-23 flex w-full flex-col items-center justify-center bg-gray-50 p-6 sm:flex-row">
         <div>
           <span>@2024</span>
           <span className="before:content-['|']">created by </span>

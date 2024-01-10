@@ -4,9 +4,9 @@ import { useState } from "react";
 import { LockKeyhole, Mail, EyeIcon, EyeOffIcon } from "lucide-react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
+import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { toast } from "react-toastify";
 import Button from "@/components/ui/Button";
 // import Checkbox from "@/components/ui/Checkbox";
@@ -88,7 +88,7 @@ export default function SignInForm() {
   return (
     <>
       <h1 className="heading-1 mb-2">Welcome back</h1>
-      <p className="description-text mb-10 flex gap-1">
+      <p className="text-1 mb-10 flex gap-1">
         Do not have an account?
         <Link href="./signup" isTextOnly>
           Sign up
@@ -192,7 +192,7 @@ export default function SignInForm() {
           */}
         <div className="mt-1 flex items-center gap-4">
           <hr className="w-full border-gray-300" />
-          <span className="detail-text">OR</span>
+          <span className="text-2">OR</span>
           <hr className="w-full border-gray-300" />
         </div>
         <Button

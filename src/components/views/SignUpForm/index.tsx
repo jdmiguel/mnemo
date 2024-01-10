@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { LockKeyhole, Mail, User, EyeIcon, EyeOffIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
 import { toast } from "react-toastify";
 import { api } from "@/trpc/react";
 import Button from "@/components/ui/Button";
@@ -63,7 +63,7 @@ export default function SignUpForm() {
   return (
     <>
       <h1 className="heading-1 mb-2">Create your account</h1>
-      <p className="description-text mb-10 flex gap-1">
+      <p className="text-1 mb-10 flex gap-1">
         Already have an account?
         <Link href="./signin" isTextOnly>
           Sign in

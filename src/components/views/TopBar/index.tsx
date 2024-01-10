@@ -49,7 +49,7 @@ export default function TopBar({ section }: TopBarProps) {
                   {session.user.name?.substring(0, 2)}
                 </span>
               )}
-              <p className="detail-text">{session.user.name}</p>
+              <p className="text-2">{session.user.name}</p>
             </div>
           </>
         ) : (

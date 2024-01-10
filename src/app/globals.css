@@ -29,7 +29,7 @@
     @apply dark:text-white-200;
   }
 
-  .description-text {
+  .text-1 {
     @apply text-lg;
     @apply font-normal;
     @apply text-black-50;
@@ -37,7 +37,7 @@
     @apply text-balance;
   }
 
-  .detail-text {
+  .text-2 {
     @apply text-sm;
     @apply font-normal;
     @apply text-gray-500;
