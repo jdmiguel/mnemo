@@ -102,12 +102,10 @@ export default {
             background: "#F7F9FD",
             foreground: "#E3E7F0",
             primary: {
-              50: "#1DA098",
               foreground: "#FFFFFF",
               DEFAULT: "#5B5FAE",
             },
             secondary: {
-              50: "#1DA098",
               foreground: "#FFFFFF",
               DEFAULT: "#5A6581",
             },

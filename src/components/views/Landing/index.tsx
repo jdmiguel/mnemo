@@ -94,7 +94,7 @@ export default function Landing() {
           </p>
         </div>
       </div>
-      <footer className="text-1 col-start-3 col-end-23 flex w-full flex-col items-center justify-center bg-gray-50 p-6 sm:flex-row">
+      <footer className="text-1 col-start-3 col-end-23 flex w-full flex-col items-center justify-center bg-white-200 p-6 sm:flex-row">
         <div>
           <span>@2024</span>
           <span className="before:content-['|']">created by </span>
@@ -102,7 +102,7 @@ export default function Landing() {
             jdmiguel{" "}
           </a>
         </div>
-        <div className="before:content-['|']">
+        <div className="hidden before:content-['|'] sm:block">
           view repo on{" "}
           <a
             href="https://github.com/jdmiguel/mnemo"
