@@ -16,7 +16,7 @@ export default function TopBar({ section }: TopBarProps) {
 
   return (
     <aside className="flex items-center justify-between border-b-1 border-gray-200 px-7 py-3 text-sm dark:border-black-50">
-      <p className="detail">{section}</p>
+      <p className="small-text">{section}</p>
       <div className="flex">
         <Button
           color="primary"
@@ -49,7 +49,7 @@ export default function TopBar({ section }: TopBarProps) {
                   {session.user.name?.substring(0, 2)}
                 </span>
               )}
-              <p className="text-2">{session.user.name}</p>
+              <p className="small-text">{session.user.name}</p>
             </div>
           </>
         ) : (

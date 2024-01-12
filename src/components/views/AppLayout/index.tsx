@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+import variants from "@/lib/animations";
 import Menu from "@/components/views/Menu";
 import TopBar from "@/components/views/TopBar";
 
@@ -12,7 +16,9 @@ export default function AppLayout({ section, children }: AppLayoutProps) {
       <Menu />
       <div className="flex flex-1 flex-col">
         <TopBar section={section} />
-        {children}
+        <motion.div variants={variants} initial="hidden" animate="fadeIn">
+          {children}
+        </motion.div>
       </div>
     </div>
   );

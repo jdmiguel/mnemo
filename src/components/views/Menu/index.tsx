@@ -13,7 +13,7 @@ export default function Menu() {
     <nav className="h-full bg-gray-50 p-5 dark:bg-black-100">
       <ul className="flex flex-col items-center gap-8">
         <li>
-          <Link href="./">
+          <Link href="./dashboard">
             <Image
               src="./logo-icon.svg"
               alt="logo mnemo"
@@ -23,7 +23,7 @@ export default function Menu() {
           </Link>
         </li>
         <li>
-          <Link href="./">
+          <Link href="./dashboard">
             <GaugeCircle
               className="stroke-gray-400 dark:stroke-gray-400"
               size={28}
@@ -31,7 +31,7 @@ export default function Menu() {
           </Link>
         </li>
         <li>
-          <Link href="./">
+          <Link href="./notes">
             <StickyNote
               className="stroke-gray-400 dark:stroke-gray-400"
               size={28}

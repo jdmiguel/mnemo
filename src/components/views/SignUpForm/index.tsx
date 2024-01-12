@@ -61,9 +61,9 @@ export default function SignUpForm() {
   };
 
   return (
-    <>
+    <div className="flex w-full flex-col items-center">
       <h1 className="heading-1 mb-2">Create your account</h1>
-      <p className="text-1 mb-10 flex gap-1">
+      <p className="regular-text mb-10 flex gap-1">
         Already have an account?
         <Link href="./signin" isTextOnly className="link">
           Sign in
@@ -178,6 +178,6 @@ export default function SignUpForm() {
           </Button>
         </form>
       </div>
-    </>
+    </div>
   );
 }

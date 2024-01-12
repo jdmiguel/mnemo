@@ -86,9 +86,9 @@ export default function SignInForm() {
   };
 
   return (
-    <>
+    <div className="flex w-full flex-col items-center">
       <h1 className="heading-1 mb-2">Welcome back</h1>
-      <p className="text-1 mb-10 flex gap-1">
+      <p className="regular-text mb-10 flex gap-1">
         Do not have an account?
         <Link href="./signup" isTextOnly className="link">
           Sign up
@@ -184,15 +184,15 @@ export default function SignInForm() {
         </form>
         {/*
           <div className="flex justify-between">
-            <Checkbox size="sm">Remember me</Checkbox>
-            <Link href="./signin" isTextOnly textSize="small">
-              Forgot Password?
-            </Link>
+          <Checkbox size="sm">Remember me</Checkbox>
+          <Link href="./signin" isTextOnly textSize="small">
+          Forgot Password?
+          </Link>
           </div>
-          */}
+        */}
         <div className="mt-1 flex items-center gap-4">
           <hr className="w-full border-gray-300" />
-          <span className="text-2">OR</span>
+          <span className="small-text">OR</span>
           <hr className="w-full border-gray-300" />
         </div>
         <Button
@@ -205,6 +205,6 @@ export default function SignInForm() {
           Continue with Google
         </Button>
       </div>
-    </>
+    </div>
   );
 }

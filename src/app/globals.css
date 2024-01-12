@@ -29,7 +29,7 @@
     @apply dark:text-white-200;
   }
 
-  .text-1 {
+  .regular-text {
     @apply text-lg;
     @apply font-normal;
     @apply text-black-50;
@@ -37,7 +37,7 @@
     @apply text-balance;
   }
 
-  .text-2 {
+  .small-text {
     @apply text-sm;
     @apply font-normal;
     @apply text-gray-500;

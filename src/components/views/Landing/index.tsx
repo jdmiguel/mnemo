@@ -14,8 +14,8 @@ export default function Landing() {
   }
 
   return (
-    <div className="flex flex-grow flex-col items-center justify-center bg-background">
-      <div className="mb-16 grid grid-cols-24 gap-x-1 gap-y-16 pt-14 sm:gap-y-20 sm:px-0 sm:pt-24 lg:gap-y-12">
+    <div className="flex h-svh flex-col">
+      <div className="mb-16 grid flex-1 grid-cols-24 gap-x-1 gap-y-16 pt-14 sm:gap-y-20 sm:px-0 lg:gap-y-12 xl:pt-24">
         <div className="order-none col-start-3 col-end-23 -mt-10 flex flex-col gap-5 self-center lg:order-first lg:col-start-2 lg:col-end-11 lg:mt-0 xl:col-start-3 2xl:col-start-5 2xl:col-end-12">
           <h1 className="flex justify-center lg:justify-start">
             <Image
@@ -29,7 +29,7 @@ export default function Landing() {
           <h2 className="heading-1 text-center lg:text-left">
             Streamline your tasks effectively
           </h2>
-          <p className="text-1 text-center lg:text-left">
+          <p className="regular-text text-center lg:text-left">
             Discover Mnemo, your go-to solution for seamless task management.
             Unify all your tasks in one accessible platform, simplifying and
             enhacing your workflow
@@ -60,7 +60,7 @@ export default function Landing() {
             className="mb-4 w-full lg:col-start-15 lg:col-end-24 xl:col-start-14"
           />
           <h3 className="heading-2 mb-2">Notes and Todos</h3>
-          <p className="text-1 text-center">
+          <p className="regular-text text-center">
             Capture thoughts effortlessly, stay organized: Intuitive note-taking
             feature for to-do lists, and never missing a task
           </p>
@@ -74,7 +74,7 @@ export default function Landing() {
             className="mb-4 w-full lg:col-start-15 lg:col-end-24 xl:col-start-14"
           />
           <h3 className="heading-2 mb-2">Kanban Boards</h3>
-          <p className="text-1 text-center">
+          <p className="regular-text text-center">
             Visualize workflow, boost collaboration using Kanban boards, and
             track tasks for enhanced productivity
           </p>
@@ -88,13 +88,13 @@ export default function Landing() {
             className="mb-4 w-full lg:col-start-15 lg:col-end-24 xl:col-start-14"
           />
           <h3 className="heading-2 mb-2">Personal calendar</h3>
-          <p className="text-1 text-center">
+          <p className="regular-text text-center">
             Master your schedule: Plan events, set reminders, and organize time
             effortlessly with our interactive calendar
           </p>
         </div>
       </div>
-      <footer className="text-1 col-start-3 col-end-23 flex w-full flex-col items-center justify-center bg-white-200 p-6 sm:flex-row">
+      <footer className="regular-text col-start-3 col-end-23 flex w-full flex-col items-center justify-center bg-white-200 p-6 sm:flex-row">
         <div>
           <span>@2024</span>
           <span className="before:content-['|']">created by </span>
