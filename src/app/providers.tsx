@@ -10,7 +10,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <NextUIProvider>
       <SessionProvider>
         {children}
-        <ToastContainer />
+        <ToastContainer toastClassName={"small-text"} />
       </SessionProvider>
     </NextUIProvider>
   );

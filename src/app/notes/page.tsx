@@ -1,4 +1,4 @@
-import AppLayout from "@/components/views/AppLayout";
+import AppLayout from "@/components/layout/AppLayout";
 
 export default function NotesPage() {
   return (

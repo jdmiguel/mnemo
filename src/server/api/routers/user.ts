@@ -19,7 +19,10 @@ export const userRouter = createTRPCRouter({
       });
 
       if (existingUserByEmail) {
-        throw new TRPCError({ code: "CONFLICT" });
+        throw new TRPCError({
+          message: "This email is connected to a user",
+          code: "CONFLICT",
+        });
       }
 
       const hashedPassword = bcrypt.hashSync(password, 10);

@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion";
 import variants from "@/lib/animations";
-import Menu from "@/components/views/Menu";
-import TopBar from "@/components/views/TopBar";
+import Menu from "@/components/feature/Menu";
+import TopBar from "@/components/feature/TopBar";
 
 export type AppLayoutProps = {
   section: string;

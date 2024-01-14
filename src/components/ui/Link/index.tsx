@@ -1,3 +1,5 @@
+"use client";
+
 import type { LinkProps } from "next/link";
 import { type ButtonProps, useButton } from "@nextui-org/button";
 import Link from "next/link";
