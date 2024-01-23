@@ -15,7 +15,7 @@ export default function TopBar({ section }: TopBarProps) {
   const hasUserImage = session?.user?.image;
 
   return (
-    <aside className="flex items-center justify-between border-b-1 border-gray-200 px-7 py-3 text-sm dark:border-black-50">
+    <aside className="flex items-center justify-between border-b-1 border-gray-200 px-7 py-2 text-sm dark:border-black-50">
       <p className="small-text">{section}</p>
       <div className="flex">
         <Button
@@ -45,7 +45,7 @@ export default function TopBar({ section }: TopBarProps) {
                   className="h-9 w-9 rounded-full"
                 />
               ) : (
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-500 text-md font-extrabold uppercase text-white-200">
+                <span className="text-md flex h-9 w-9 items-center justify-center rounded-full bg-gray-500 font-extrabold uppercase text-white-200">
                   {session.user.name?.substring(0, 2)}
                 </span>
               )}

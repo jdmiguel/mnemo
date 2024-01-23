@@ -5,11 +5,12 @@ export default function Header() {
     <header>
       <h1 className="mb-3 flex justify-center lg:justify-start">
         <Image
-          className="w-full max-w-lg"
+          className="w-full"
           src="./logo.svg"
           alt="logo mnemo"
-          width={360}
-          height={90}
+          width={350}
+          height={64}
+          priority
         />
       </h1>
       <h2 className="heading-1 text-center lg:text-left">
