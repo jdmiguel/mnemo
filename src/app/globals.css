@@ -6,26 +6,26 @@
   .heading-1 {
     @apply text-3xl;
     @apply font-light;
-    @apply text-black-200;
+    @apply text-black-50;
     @apply dark:text-white-200;
   }
   .heading-2 {
     @apply text-2xl;
     @apply font-medium;
-    @apply text-black-200;
+    @apply text-black-50;
     @apply dark:text-white-200;
   }
   .heading-3 {
     @apply text-xl;
     @apply font-medium;
-    @apply text-black-200;
+    @apply text-black-50;
     @apply dark:text-white-200;
   }
 
   .heading-4 {
     @apply uppercase;
     @apply font-medium;
-    @apply text-black-200;
+    @apply text-black-50;
     @apply dark:text-white-200;
   }
 
@@ -46,11 +46,29 @@
   }
 
   .link {
+    @apply !font-medium;
+    @apply data-[variant=flat]:!font-medium;
+    @apply hover:bg-opacity-75;
+    @apply hover:data-[variant=flat]:opacity-75;
+    @apply transition-opacity;
+  }
+
+  .linkTextOnly {
     @apply text-lg;
     @apply font-normal;
     @apply text-purple-200;
-    @apply dark:text-purple-50;
-    @apply hover:text-green-100;
-    @apply transition-colors;
+    @apply dark:text-purple-100;
+    @apply transition-opacity;
+    @apply relative;
+    @apply before:content-[''];
+    @apply before:absolute;
+    @apply before:left-0;
+    @apply before:top-6;
+    @apply before:w-full;
+    @apply before:h-0.5;
+    @apply before:bg-purple-200;
+    @apply before:scale-x-0;
+    @apply before:transition-transform;
+    @apply hover:before:scale-x-100;
   }
 }

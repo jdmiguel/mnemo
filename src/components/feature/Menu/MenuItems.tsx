@@ -48,13 +48,13 @@ export default function MenuItems() {
   return (
     <nav>
       <ul className="flex flex-col items-center gap-2">
-        {menuItems.map((link) => (
+        {menuItems.map((item) => (
           <MenuItem
-            key={link.href}
-            href={link.href}
-            icon={link.icon}
-            text={link.text}
-            active={link.href === pathname}
+            key={item.href}
+            href={item.href}
+            icon={item.icon}
+            text={item.text}
+            active={item.href === pathname}
           />
         ))}
       </ul>

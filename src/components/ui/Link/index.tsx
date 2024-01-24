@@ -16,22 +16,16 @@ type MnemoLinkProps = LinkProps &
 
 export default function MnemoLink({
   isTextOnly = false,
-  textSize = "normal",
   className = "",
   ...props
 }: MnemoLinkProps) {
   const { styles: buttonStyles } = useButton(props);
 
-  const defaultStyles = isTextOnly
-    ? "font-normal text-purple-100 transition-colors"
-    : `${buttonStyles} hover:bg-green-100`;
+  const defaultStyles = isTextOnly ? "linkTextOnly" : `${buttonStyles} link`;
 
   return (
     <Link
-      className={clsx(defaultStyles, className, {
-        "hover:text-green-100": isTextOnly,
-        "text-sm": textSize === "small",
-      })}
+      className={clsx(defaultStyles, className, "font-medium")}
       {...(props as LinkProps)}
     >
       {props.children}

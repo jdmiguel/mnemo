@@ -4,6 +4,7 @@ export const enum COLORS {
   RED_100 = "#DB241C",
   ORANGE = "#C85616",
   YELLOW = "#E3A82B",
+  BLUE = "#1D81A0",
   GREEN = "#1DA098",
   PURPLE_50 = "#5B5FAE",
   PURPLE_100 = "#656AC5",

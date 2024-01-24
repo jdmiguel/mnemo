@@ -4,7 +4,7 @@ export default function Footer() {
       <div>
         <span>@2024</span>
         <span className="before:content-['|']">created by </span>
-        <a href="https:jdmiguel.com" target="blank" className="link">
+        <a href="https:jdmiguel.com" target="blank" className="linkTextOnly">
           jdmiguel{" "}
         </a>
       </div>
@@ -13,7 +13,7 @@ export default function Footer() {
         <a
           href="https://github.com/jdmiguel/mnemo"
           target="blank"
-          className="link"
+          className="linkTextOnly"
         >
           github
         </a>

@@ -35,11 +35,12 @@ export default function GoogleProviderButton() {
 
   return (
     <Button
-      color="secondary"
+      color="primary"
       fullWidth
       radius="sm"
       onClick={onClick}
       isLoading={isLoading}
+      variant="flat"
     >
       Continue with Google
     </Button>

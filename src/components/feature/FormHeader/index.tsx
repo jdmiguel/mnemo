@@ -17,7 +17,7 @@ export default function FormHeader({ title, text, link }: FormHeaderProps) {
       <h1 className="heading-1 mb-2">{title}</h1>
       <p className="regular-text mb-10 flex gap-1">
         {text}
-        <Link href={link.href} isTextOnly className="link">
+        <Link href={link.href} isTextOnly>
           {link.text}
         </Link>
       </p>

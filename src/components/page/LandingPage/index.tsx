@@ -21,7 +21,13 @@ export default function LandingPage() {
             <Link color="primary" radius="sm" href="./auth/signin">
               Log in
             </Link>
-            <Link color="secondary" radius="sm" href="./auth/signup">
+            <Link
+              color="primary"
+              radius="sm"
+              href="./auth/signup"
+              variant="flat"
+              data-variant="flat"
+            >
               Sign up
             </Link>
           </div>

@@ -17,8 +17,8 @@ const MnemoInput = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
         ],
         inputWrapper: [
           "bg-gray-100 dark:bg-black-100",
-          "hover:!bg-gray-50 dark:hover:!bg-black-50",
-          "focus-within:!bg-gray-50 dark:focus-within:!bg-black-50",
+          "hover:!bg-opacity-75 hover:!bg-gray-100",
+          "focus-within:bg-opacity-75 dark:focus-within:!bg-black-50",
         ],
         errorMessage: "text-red-100 font-bold text-sm",
       }}

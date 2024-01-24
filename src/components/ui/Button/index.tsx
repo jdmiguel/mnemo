@@ -10,7 +10,7 @@ export default function MnemoButton(props: MnemoButtonProps) {
   return (
     <Button
       color={props.color ?? "primary"}
-      className={"hover:bg-green-100"}
+      className="!font-medium"
       {...props}
     >
       {props.children}
