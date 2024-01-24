@@ -19,31 +19,26 @@ const menuItems = [
     href: "/dashboard",
     icon: <GaugeCircle {...iconProps} />,
     text: "Dashboard",
-    active: true,
   },
   {
     href: "/notes",
     icon: <StickyNote {...iconProps} />,
     text: "Notes",
-    active: false,
   },
   {
     href: "/tasks",
     icon: <List {...iconProps} />,
     text: "Tasks",
-    active: false,
   },
   {
     href: "/kanban",
     icon: <KanbanSquare {...iconProps} />,
     text: "Kanban",
-    active: false,
   },
   {
     href: "/calendar",
     icon: <Calendar {...iconProps} />,
     text: "Calendar",
-    active: false,
   },
 ];
 

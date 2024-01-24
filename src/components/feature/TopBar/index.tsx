@@ -1,8 +1,8 @@
 "use client";
 
 import { signIn, signOut, useSession } from "next-auth/react";
-import Image from "next/image";
 import { Button } from "@nextui-org/button";
+import { Avatar, type AvatarProps } from "@nextui-org/avatar";
 import { Sun } from "lucide-react";
 
 type TopBarProps = {
@@ -13,6 +13,13 @@ export default function TopBar({ section }: TopBarProps) {
   const { data: session } = useSession();
 
   const hasUserImage = session?.user?.image;
+  const avatarProps = {
+    color: "primary" as AvatarProps["color"],
+    showFallback: true,
+    ...(hasUserImage
+      ? { src: session?.user?.image ?? "" }
+      : { name: session?.user?.name?.substring(0, 2) ?? "" }),
+  };
 
   return (
     <aside className="flex items-center justify-between border-b-1 border-gray-200 px-7 py-2 text-sm dark:border-black-50">
@@ -36,19 +43,10 @@ export default function TopBar({ section }: TopBarProps) {
               Sign out
             </Button>
             <div className="ml-6 flex items-center gap-2">
-              {hasUserImage ? (
-                <Image
-                  src={session.user.image ?? ""}
-                  alt={session.user.name ?? ""}
-                  width={36}
-                  height={36}
-                  className="h-9 w-9 rounded-full"
-                />
-              ) : (
-                <span className="text-md flex h-9 w-9 items-center justify-center rounded-full bg-gray-500 font-extrabold uppercase text-white-200">
-                  {session.user.name?.substring(0, 2)}
-                </span>
-              )}
+              <Avatar
+                {...avatarProps}
+                classNames={{ base: "text-md uppercase" }}
+              />
               <p className="small-text">{session.user.name}</p>
             </div>
           </>

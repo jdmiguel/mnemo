@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Link from "@/components/ui/Link";
+import { Chip } from "@nextui-org/chip";
 
 type MenuLinkProps = {
   href: string;
@@ -10,7 +11,7 @@ type MenuLinkProps = {
 
 export default function MenuItem({ href, icon, text, active }: MenuLinkProps) {
   return (
-    <li className="h-14 py-2">
+    <li className="group relative h-14 py-2">
       <Link
         href={href}
         className={clsx(
@@ -22,6 +23,17 @@ export default function MenuItem({ href, icon, text, active }: MenuLinkProps) {
       >
         {icon}
       </Link>
+      <Chip
+        color="primary"
+        className={clsx(
+          "pointer-events-none absolute left-16 top-3.5 origin-left scale-x-0 transition-transform ease-soft-spring",
+          {
+            "group-hover:scale-x-100": !active,
+          },
+        )}
+      >
+        {text}
+      </Chip>
     </li>
   );
 }
