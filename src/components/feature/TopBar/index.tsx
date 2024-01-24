@@ -12,7 +12,7 @@ type TopBarProps = {
 export default function TopBar({ section }: TopBarProps) {
   const { data: session } = useSession();
 
-  const hasUserImage = session?.user?.image;
+  const hasUserImage = Boolean(session?.user?.image);
   const avatarProps = {
     color: "primary" as AvatarProps["color"],
     showFallback: true,
@@ -44,8 +44,8 @@ export default function TopBar({ section }: TopBarProps) {
             </Button>
             <div className="ml-6 flex items-center gap-2">
               <Avatar
-                {...avatarProps}
                 classNames={{ base: "text-md uppercase" }}
+                {...avatarProps}
               />
               <p className="small-text">{session.user.name}</p>
             </div>
