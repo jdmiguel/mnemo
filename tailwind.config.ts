@@ -111,7 +111,7 @@ export default {
             },
             success: {
               foreground: "#FFFFFF",
-              DEFAULT: "#1D81A0 ",
+              DEFAULT: "#1D81A0",
             },
             danger: {
               foreground: "#FFFFFF",

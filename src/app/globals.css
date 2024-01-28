@@ -4,7 +4,8 @@
 
 @layer base {
   .heading-1 {
-    @apply text-3xl;
+    @apply text-2xl;
+    @apply sm:text-3xl;
     @apply font-light;
     @apply text-black-50;
     @apply dark:text-white-200;

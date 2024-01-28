@@ -3,7 +3,8 @@
 import { signIn, signOut, useSession } from "next-auth/react";
 import { Button } from "@nextui-org/button";
 import { Avatar, type AvatarProps } from "@nextui-org/avatar";
-import { Sun } from "lucide-react";
+import { Sun, Menu, X } from "lucide-react";
+import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
 
 type TopBarProps = {
   section: string;
@@ -11,6 +12,8 @@ type TopBarProps = {
 
 export default function TopBar({ section }: TopBarProps) {
   const { data: session } = useSession();
+
+  const { isOpen, updateStatus } = useMobileMenuStatus();
 
   const hasUserImage = Boolean(session?.user?.image);
   const avatarProps = {
@@ -22,9 +25,9 @@ export default function TopBar({ section }: TopBarProps) {
   };
 
   return (
-    <aside className="flex items-center justify-between border-b-1 border-gray-200 px-7 py-2 text-sm dark:border-black-50">
+    <aside className="flex min-h-14 items-center justify-between border-b-1 border-gray-200 px-7 py-2 text-sm dark:border-black-50">
       <p className="small-text">{section}</p>
-      <div className="flex">
+      <div className="hidden md:flex">
         <Button
           color="primary"
           variant="light"
@@ -55,6 +58,17 @@ export default function TopBar({ section }: TopBarProps) {
             Sign in
           </Button>
         )}
+      </div>
+      <div className="md:hidden">
+        <Button
+          color="primary"
+          variant="light"
+          isIconOnly
+          aria-label="menu mobile"
+          onClick={updateStatus}
+        >
+          {isOpen ? <X /> : <Menu />}
+        </Button>
       </div>
     </aside>
   );

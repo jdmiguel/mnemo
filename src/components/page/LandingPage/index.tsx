@@ -10,7 +10,7 @@ export default function LandingPage() {
   return (
     <div className="flex h-svh flex-col">
       <div className="mb-16 grid flex-1 grid-cols-24 gap-x-1 gap-y-16 pt-14 sm:gap-y-20 sm:px-0 lg:gap-y-12 xl:pt-24">
-        <div className="order-none col-start-3 col-end-23 -mt-10 flex flex-col gap-5 self-center lg:order-first lg:col-start-2 lg:col-end-11 lg:mt-0 xl:col-start-3 2xl:col-start-5 2xl:col-end-12">
+        <div className="order-none col-start-3 col-end-23 -mt-10 flex flex-col gap-5 self-center sm:col-start-4 sm:col-end-22 lg:order-first lg:col-start-2 lg:col-end-11 lg:mt-0 xl:col-start-3 2xl:col-start-5 2xl:col-end-12">
           <Header />
           <p className="regular-text text-center lg:text-left">
             Discover Mnemo, your go-to solution for seamless task management.

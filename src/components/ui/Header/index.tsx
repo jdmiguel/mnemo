@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header>
-      <h1 className="mb-3 flex justify-center lg:justify-start">
+    <header className="flex flex-col items-center gap-3 lg:items-start">
+      <h1 className="lg:w-full">
         <Image
           className="w-full"
           src="./logo.svg"

@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import clsx from "clsx";
 import {
   GaugeCircle,
   StickyNote,
@@ -9,6 +10,7 @@ import {
   Calendar,
 } from "lucide-react";
 import MenuItem from "./MenuItem";
+import MobileMenuItem from "./MobileMenuItem";
 
 const iconProps = {
   size: 26,
@@ -42,14 +44,24 @@ const menuItems = [
   },
 ];
 
-export default function MenuItems() {
+type MenuItemsProps = {
+  isMobileMenu?: boolean;
+};
+
+export default function MenuItems({ isMobileMenu = false }: MenuItemsProps) {
   const pathname = usePathname();
 
+  const Item = isMobileMenu ? MobileMenuItem : MenuItem;
+
   return (
-    <nav>
-      <ul className="flex flex-col items-center gap-2">
+    <nav className="flex w-full justify-center">
+      <ul
+        className={clsx("flex w-48 flex-col items-center gap-2", {
+          "!items-start justify-center": isMobileMenu,
+        })}
+      >
         {menuItems.map((item) => (
-          <MenuItem
+          <Item
             key={item.href}
             href={item.href}
             icon={item.icon}
