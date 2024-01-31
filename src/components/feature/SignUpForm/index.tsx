@@ -2,20 +2,15 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { api } from "@/trpc/react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import { LockKeyhole, Mail, User, EyeIcon, EyeOffIcon } from "lucide-react";
+import { createUser } from "@/server/actions/user";
+import { SignUpSchema } from "@/lib/schema";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
-
-const SignUpSchema = z.object({
-  name: z.string().min(3),
-  email: z.string().min(1, "Email is required").email("Invalid email"),
-  password: z.string().min(8),
-});
 
 export default function SignUpForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -36,27 +31,25 @@ export default function SignUpForm() {
 
   const router = useRouter();
 
-  const createUser = api.user.create.useMutation({
-    onSuccess: () => {
-      toast.success("User created successfully", {
+  const onSubmit = async (values: z.infer<typeof SignUpSchema>) => {
+    setIsLoading(true);
+
+    const result = await createUser(values);
+
+    setIsLoading(false);
+
+    if (result.success) {
+      toast.success(result.message, {
         position: toast.POSITION.BOTTOM_RIGHT,
       });
 
       router.push("/auth/signin");
-    },
-    onError: (error) => {
-      toast.error(error.message, {
-        position: toast.POSITION.BOTTOM_RIGHT,
-      });
-    },
-    onSettled: () => {
-      setIsLoading(false);
-    },
-  });
+      return;
+    }
 
-  const onSubmit = (values: z.infer<typeof SignUpSchema>) => {
-    setIsLoading(true);
-    createUser.mutate(values);
+    toast.error(result.message, {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
   };
 
   return (
@@ -75,10 +68,7 @@ export default function SignUpForm() {
         isInvalid={Boolean(errors.name)}
         errorMessage={errors.name?.message}
         {...register("name", {
-          required: {
-            value: true,
-            message: "Please enter a valid name",
-          },
+          required: true,
         })}
       />
       <Input
@@ -92,10 +82,7 @@ export default function SignUpForm() {
         isInvalid={Boolean(errors.email)}
         errorMessage={errors.email?.message}
         {...register("email", {
-          required: {
-            value: true,
-            message: "Please enter a valid email",
-          },
+          required: true,
           pattern: {
             value: /\S+@\S+\.\S+/,
             message: "Entered value does not match email format",
@@ -137,10 +124,7 @@ export default function SignUpForm() {
         isInvalid={Boolean(errors.password)}
         errorMessage={errors.password?.message}
         {...register("password", {
-          required: {
-            value: true,
-            message: "Please enter a valid password",
-          },
+          required: true,
           minLength: {
             value: 8,
             message: "min length allowed is 8",
