@@ -2,9 +2,9 @@
 
 import clsx from "clsx";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
-import MenuItems from "@/components/ui/MenuItems";
+import Menu from "@/components/layouts/Menu";
 
-export default function MobileMenu() {
+export default function MobileMenuWrapper() {
   const { isOpen } = useMobileMenuStatus();
 
   return (
@@ -16,7 +16,7 @@ export default function MobileMenu() {
         },
       )}
     >
-      <MenuItems isMobileMenu />
+      <Menu isMobileMenu />
     </aside>
   );
 }

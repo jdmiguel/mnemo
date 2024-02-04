@@ -9,8 +9,8 @@ import {
   KanbanSquare,
   Calendar,
 } from "lucide-react";
-import MenuItem from "./MenuItem";
-import MobileMenuItem from "./MobileMenuItem";
+import MenuItem from "@/components/ui/MenuItem";
+import MobileMenuItem from "@/components/ui/MenuItem/MobileMenuItem";
 
 const iconProps = {
   size: 26,
@@ -48,7 +48,7 @@ type MenuItemsProps = {
   isMobileMenu?: boolean;
 };
 
-export default function MenuItems({ isMobileMenu = false }: MenuItemsProps) {
+export default function Menu({ isMobileMenu = false }: MenuItemsProps) {
   const pathname = usePathname();
 
   const Item = isMobileMenu ? MobileMenuItem : MenuItem;

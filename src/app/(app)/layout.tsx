@@ -1,14 +1,14 @@
 import { Providers } from "./Providers";
-import Menu from "@/components/feature/Menu";
-import MenuMobile from "@/components/feature/MobileMenu";
+import MenuWrapper from "@/components/layouts/MenuWrapper";
+import MobileMenuWrapper from "@/components/layouts/MobileMenuWrapper";
 import TopBar from "@/components/feature/TopBar";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <Providers>
       <div className="flex h-screen">
-        <Menu />
-        <MenuMobile />
+        <MenuWrapper />
+        <MobileMenuWrapper />
         <div className="flex flex-1 flex-col">
           <TopBar />
           {children}
