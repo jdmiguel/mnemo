@@ -10,6 +10,7 @@ export default function Menu() {
           alt="logo mnemo"
           width={256}
           height={239}
+          priority
         />
       </div>
       <MenuItems />

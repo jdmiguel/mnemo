@@ -1,6 +1,6 @@
+import { Suspense } from "react";
 import FormHeader from "@/components/feature/FormHeader";
-import SigninForm from "@/components/feature/SignInForm";
-import GoogleProviderButton from "@/components/feature/GoogleProviderButton";
+import SignInFormWrapper from "@/components/layouts/SignInFormWrapper";
 
 export default function SigninPage() {
   return (
@@ -12,15 +12,9 @@ export default function SigninPage() {
             text="Do not have an account?"
             link={{ href: "./signup", text: "Sign up" }}
           />
-          <div className="flex w-full flex-col gap-3">
-            <SigninForm />
-            <div className="mt-1 flex items-center gap-4">
-              <hr className="w-full border-gray-300" />
-              <span className="small-text">OR</span>
-              <hr className="w-full border-gray-300" />
-            </div>
-            <GoogleProviderButton />
-          </div>
+          <Suspense>
+            <SignInFormWrapper />
+          </Suspense>
         </div>
       </main>
     </div>

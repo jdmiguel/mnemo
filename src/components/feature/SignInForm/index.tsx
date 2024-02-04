@@ -8,13 +8,9 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import { LockKeyhole, Mail, EyeIcon, EyeOffIcon } from "lucide-react";
+import { SignInSchema } from "@/lib/schema";
 import Input from "@/components/ui/Input";
 import Button from "@/components/ui/Button";
-
-const SignInSchema = z.object({
-  email: z.string().min(1, "Email is required").email("Invalid email"),
-  password: z.string().min(8),
-});
 
 export default function SignInForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
