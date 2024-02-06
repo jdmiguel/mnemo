@@ -11,6 +11,7 @@ export default function MnemoButton(props: MnemoButtonProps) {
     <Button
       color={props.color ?? "primary"}
       className="!font-medium"
+      radius="sm"
       {...props}
     >
       {props.children}

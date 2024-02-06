@@ -23,7 +23,7 @@ export default function MobileMenuItem({
       <Link
         href={href}
         className={clsx(
-          "flex !h-full !min-w-0 items-center justify-center gap-6 bg-transparent text-purple-100 ",
+          "flex !h-full !min-w-0 items-center justify-center gap-unit-md bg-transparent text-purple-100 ",
           {
             "pointer-events-none bg-white-200 !text-purple-200": active,
           },
@@ -31,7 +31,7 @@ export default function MobileMenuItem({
       >
         {icon}
         <span
-          className={clsx("text-large text-purple-100", {
+          className={clsx("text-xl text-purple-100", {
             "!text-purple-200": active,
           })}
         >

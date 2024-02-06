@@ -1,63 +1,23 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { signIn, signOut, useSession } from "next-auth/react";
 import { Button } from "@nextui-org/button";
-import { Avatar, type AvatarProps } from "@nextui-org/avatar";
-import { Sun, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
+import UserProfileBar from "@/components/feature/UserProfileBar";
 
 export default function TopBar() {
   const pathname = usePathname();
   const breadcrumbs = pathname.substring(1, pathname.length);
 
-  const { data: session } = useSession();
-
-  const { isOpen, updateStatus } = useMobileMenuStatus();
-
-  const hasUserImage = Boolean(session?.user?.image);
-  const avatarProps = {
-    color: "primary" as AvatarProps["color"],
-    showFallback: true,
-    ...(hasUserImage
-      ? { src: session?.user?.image ?? "" }
-      : { name: session?.user?.name?.substring(0, 2) ?? "" }),
-  };
+  const { isOpen: isMobileMenuOpen, updateStatus: updateMobileMenuStatus } =
+    useMobileMenuStatus();
 
   return (
-    <aside className="flex min-h-14 items-center justify-between border-b-1 border-gray-200 px-7 py-2 text-sm dark:border-black-50">
-      <p className="small-text">{breadcrumbs}</p>
-      <div className="hidden md:flex">
-        <Button
-          color="primary"
-          variant="light"
-          isIconOnly
-          aria-label="light theme"
-        >
-          <Sun />
-        </Button>
-        {session?.user ? (
-          <>
-            <Button
-              color="primary"
-              variant="light"
-              onClick={() => signOut({ callbackUrl: "/" })}
-            >
-              Sign out
-            </Button>
-            <div className="ml-6 flex items-center gap-2">
-              <Avatar
-                classNames={{ base: "text-md uppercase" }}
-                {...avatarProps}
-              />
-              <p className="small-text">{session.user.name}</p>
-            </div>
-          </>
-        ) : (
-          <Button color="primary" variant="light" onClick={() => signIn()}>
-            Sign in
-          </Button>
-        )}
+    <aside className="flex min-h-14 items-center justify-between border-b-1 border-gray-200 py-2 pl-5 pr-3 text-sm dark:border-black-50 md:pl-7 md:pr-7">
+      <p className="small-text capitalize">{breadcrumbs}</p>
+      <div className="hidden md:block">
+        <UserProfileBar withHover />
       </div>
       <div className="md:hidden">
         <Button
@@ -65,9 +25,9 @@ export default function TopBar() {
           variant="light"
           isIconOnly
           aria-label="menu mobile"
-          onClick={updateStatus}
+          onClick={updateMobileMenuStatus}
         >
-          {isOpen ? <X /> : <Menu />}
+          {isMobileMenuOpen ? <X /> : <Menu />}
         </Button>
       </div>
     </aside>
