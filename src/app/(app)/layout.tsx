@@ -1,7 +1,7 @@
 import { Providers } from "./Providers";
 import MenuWrapper from "@/components/layouts/MenuWrapper";
 import MobileMenuWrapper from "@/components/layouts/MobileMenuWrapper";
-import TopBar from "@/components/feature/TopBar";
+import AppHeader from "@/components/feature/AppHeader";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +10,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
         <MenuWrapper />
         <MobileMenuWrapper />
         <div className="flex flex-1 flex-col">
-          <TopBar />
+          <AppHeader />
           {children}
         </div>
       </div>
