@@ -56,7 +56,7 @@ export default function Menu({ isMobileMenu = false }: MenuItemsProps) {
   return (
     <nav className="flex w-full justify-center">
       <ul
-        className={clsx("flex w-48 flex-col items-center gap-1", {
+        className={clsx("flex w-48 flex-col items-center", {
           "!items-start justify-center": isMobileMenu,
         })}
       >

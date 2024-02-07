@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
 import Menu from "@/components/layouts/Menu";
-import UserProfileBar from "@/components/feature/UserProfileBar";
+import UserSettings from "@/components/feature/UserSettings";
 
 export default function MobileMenuWrapper() {
   const { isOpen } = useMobileMenuStatus();
@@ -18,7 +18,7 @@ export default function MobileMenuWrapper() {
       )}
     >
       <Menu isMobileMenu />
-      <UserProfileBar />
+      <UserSettings />
     </aside>
   );
 }
