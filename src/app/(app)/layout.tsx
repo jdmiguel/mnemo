@@ -1,7 +1,7 @@
 import { Providers } from "./Providers";
 import MenuWrapper from "@/components/layouts/MenuWrapper";
 import MobileMenuWrapper from "@/components/layouts/MobileMenuWrapper";
-import AppHeader from "@/components/feature/AppHeader";
+import AppHeader from "@/components/feature/headers/AppHeader";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (

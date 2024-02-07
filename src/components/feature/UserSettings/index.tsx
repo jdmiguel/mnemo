@@ -1,9 +1,9 @@
 import { useSession } from "next-auth/react";
 import { ButtonProps } from "@nextui-org/button";
 import clsx from "clsx";
-import ThemeButton from "@/components/feature/ThemeButton";
+import ThemeButton from "@/components/feature/buttons/ThemeButton";
 import UserAvatarMenu from "@/components/feature/UserAvatarMenu";
-import SignOutButton from "@/components/feature/SignOutButton";
+import SignOutButton from "@/components/feature/buttons/SignOutButton";
 
 type UserSettingsProps = {
   withUserAvatar?: boolean;

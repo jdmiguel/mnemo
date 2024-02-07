@@ -13,7 +13,7 @@ type FormHeaderProps = {
 
 export default function FormHeader({ title, text, link }: FormHeaderProps) {
   return (
-    <>
+    <header>
       <h1 className="heading-1 mb-2">{title}</h1>
       <p className="regular-text mb-10 flex gap-1">
         {text}
@@ -21,6 +21,6 @@ export default function FormHeader({ title, text, link }: FormHeaderProps) {
           {link.text}
         </Link>
       </p>
-    </>
+    </header>
   );
 }

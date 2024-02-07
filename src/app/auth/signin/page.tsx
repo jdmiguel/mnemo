@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import FormHeader from "@/components/feature/FormHeader";
+import FormHeader from "@/components/feature/headers/FormHeader";
 import SignInFormWrapper from "@/components/layouts/SignInFormWrapper";
 
 export default function SigninPage() {

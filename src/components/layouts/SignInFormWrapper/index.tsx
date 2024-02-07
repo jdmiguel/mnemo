@@ -1,5 +1,5 @@
-import SigninForm from "@/components/feature/SignInForm";
-import GoogleProviderButton from "@/components/feature/GoogleProviderButton";
+import SigninForm from "@/components/feature/forms/SignInForm";
+import GoogleProviderButton from "@/components/feature/buttons/GoogleProviderButton";
 
 export default function SignInFormWrapper() {
   return (

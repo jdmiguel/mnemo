@@ -1,6 +1,6 @@
 import { Tooltip } from "@nextui-org/tooltip";
 import { Avatar, type AvatarProps } from "@nextui-org/avatar";
-import SignOutButton from "@/components/feature/SignOutButton";
+import SignOutButton from "@/components/feature/buttons/SignOutButton";
 
 type UserAvatarMenuProps = {
   userName: string;
