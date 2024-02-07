@@ -14,7 +14,7 @@ export default function TopBar() {
     useMobileMenuStatus();
 
   return (
-    <aside className="flex min-h-14 items-center justify-between border-b-1 border-gray-200 py-2 pl-5 pr-3 text-sm dark:border-black-50 md:pl-7 md:pr-7">
+    <header className="flex min-h-14 items-center justify-between border-b-1 border-gray-200 py-2 pl-5 pr-3 text-sm dark:border-black-50 md:pl-7 md:pr-7">
       <p className="small-text capitalize">{breadcrumbs}</p>
       <div className="hidden md:block">
         <UserSettings withUserAvatar />
@@ -30,6 +30,6 @@ export default function TopBar() {
           {isMobileMenuOpen ? <X /> : <Menu />}
         </Button>
       </div>
-    </aside>
+    </header>
   );
 }

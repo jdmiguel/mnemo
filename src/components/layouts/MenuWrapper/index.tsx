@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Menu from "@/components/layouts/Menu";
+import Menu from "@/components/feature/Menu";
 
 export default function MenuWrapper() {
   return (

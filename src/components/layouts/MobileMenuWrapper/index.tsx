@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
-import Menu from "@/components/layouts/Menu";
+import Menu from "@/components/feature/Menu";
 import UserSettings from "@/components/feature/UserSettings";
 
 export default function MobileMenuWrapper() {
