@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import FormHeader from "@/components/feature/headers/FormHeader";
-import SignInFormWrapper from "@/components/layouts/SignInFormWrapper";
+import FormHeader from "@/components/features/headers/FormHeader";
+import SignInFormLayout from "@/components/layouts/SignInFormLayout";
 
 export default function SigninPage() {
   return (
@@ -13,7 +13,7 @@ export default function SigninPage() {
             link={{ href: "./signup", text: "Sign up" }}
           />
           <Suspense>
-            <SignInFormWrapper />
+            <SignInFormLayout />
           </Suspense>
         </div>
       </main>

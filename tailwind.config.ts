@@ -107,7 +107,7 @@ export default {
             },
             secondary: {
               foreground: "#FFFFFF",
-              DEFAULT: "#159890",
+              DEFAULT: "#777CA1",
             },
             success: {
               foreground: "#FFFFFF",

@@ -27,7 +27,7 @@ export default function MenuItem({ href, icon, text, active }: MenuItemProps) {
         color="primary"
         radius="sm"
         className={clsx(
-          "pointer-events-none absolute left-16 top-3.5 origin-left scale-x-0 transition-transform ease-soft-spring",
+          "pointer-events-none absolute left-16 top-3.5 z-10 origin-left scale-x-0 transition-transform ease-soft-spring",
           {
             "group-hover:scale-x-100": !active,
           },

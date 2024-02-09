@@ -1,3 +1,9 @@
+import NotesPageWrapper from "@/components/features/wrappers/NotesPageWrapper";
+
 export default function NotesPage() {
-  return <main></main>;
+  return (
+    <main>
+      <NotesPageWrapper />
+    </main>
+  );
 }
