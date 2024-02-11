@@ -7,5 +7,5 @@ type PageHeaderActionsProps = {
 export default function PageHeaderActions({
   children,
 }: PageHeaderActionsProps) {
-  return <div className="flex gap-2">{children}</div>;
+  return <div className="flex flex-col gap-2 sm:flex-row">{children}</div>;
 }

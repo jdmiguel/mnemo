@@ -15,11 +15,7 @@ export default function ToggleAllButton({
   const text = `${isExpandType ? "Expand" : "Collapse"} all`;
 
   return (
-    <Button
-      startContent={<Icon size={15} />}
-      color="secondary"
-      onClick={onClick}
-    >
+    <Button startContent={<Icon size={15} />} color="default" onClick={onClick}>
       {text}
     </Button>
   );

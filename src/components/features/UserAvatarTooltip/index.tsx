@@ -15,7 +15,7 @@ export default function UserAvatarTooltip({
     <Tooltip
       content={
         <div className="flex flex-col gap-3 p-3">
-          <p className="small-text text-center">{userName}</p>
+          <p className="text-center text-small">{userName}</p>
           <SignOutButton />
         </div>
       }

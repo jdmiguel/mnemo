@@ -6,7 +6,7 @@ export default function ThemeButton({ color, variant }: ButtonProps) {
   return (
     <Button color={color} variant={variant} aria-label="light theme">
       <SunIcon />
-      <span className="text-small">Light</span>
+      <span>Light</span>
     </Button>
   );
 }

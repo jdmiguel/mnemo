@@ -15,9 +15,9 @@ export default function MenuItem({ href, icon, text, active }: MenuItemProps) {
       <Link
         href={href}
         className={clsx(
-          "flex !h-full !min-w-0 items-center justify-center gap-6 bg-transparent !px-unit-2 text-purple-100 hover:bg-white-200 hover:text-purple-200",
+          "flex !h-full !min-w-0 items-center justify-center gap-6 bg-transparent !px-unit-2 text-purple-100 hover:bg-white-50 hover:text-purple-200",
           {
-            "pointer-events-none bg-white-200 !text-purple-200": active,
+            "pointer-events-none bg-white-50 !text-purple-200": active,
           },
         )}
       >

@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="regular-text flex w-full flex-col items-center justify-center bg-white-200 p-6 sm:flex-row">
+    <footer className="flex w-full flex-col items-center justify-center bg-white-200 p-6 text-large sm:flex-row">
       <div>
         <span>@2024</span>
         <span className="before:content-['|']">created by </span>

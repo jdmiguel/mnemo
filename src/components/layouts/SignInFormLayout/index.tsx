@@ -7,7 +7,7 @@ export default function SignInFormLayout() {
       <SigninForm />
       <div className="mt-1 flex items-center gap-4">
         <hr className="w-full border-gray-300" />
-        <span className="small-text">OR</span>
+        <span className="text-small">OR</span>
         <hr className="w-full border-gray-300" />
       </div>
       <GoogleProviderButton />

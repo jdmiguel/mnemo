@@ -7,5 +7,5 @@ type PageHeaderFiltersProps = {
 export default function PageHeaderFilters({
   children,
 }: PageHeaderFiltersProps) {
-  return <div className="flex gap-2">{children}</div>;
+  return <div className="flex flex-col gap-2 md:flex-row">{children}</div>;
 }

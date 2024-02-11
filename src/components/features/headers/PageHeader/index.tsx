@@ -9,7 +9,7 @@ type PageHeaderProps = {
 };
 
 function PageHeader({ children }: PageHeaderProps) {
-  return <div className="rounded-sm bg-gray-50 p-6">{children}</div>;
+  return <div className="bg-white-300 rounded-sm p-6">{children}</div>;
 }
 
 PageHeader.TopWrapper = PageHeaderTopWrapper;

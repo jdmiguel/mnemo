@@ -60,9 +60,8 @@ export default {
         50: "#C72116",
         100: "#DB241C",
       },
-      orange: "#C85616",
+      orange: "#E95E10",
       yellow: "#E3A82B",
-      blue: "#1D81A0",
       green: {
         50: "#1DA098",
         100: "#159890",
@@ -75,6 +74,7 @@ export default {
         50: "#FFFFFF",
         100: "#F7F9FD",
         200: "#EDEFFC",
+        300: "#E2E6F9",
       },
       gray: {
         50: "#DDE0F1",
@@ -101,21 +101,29 @@ export default {
           colors: {
             background: "#F7F9FD",
             foreground: "#E3E7F0",
+            default: {
+              foreground: "#FFFFFF",
+              DEFAULT: "#777CA1",
+            },
             primary: {
               foreground: "#FFFFFF",
               DEFAULT: "#5B5FAE",
             },
             secondary: {
               foreground: "#FFFFFF",
-              DEFAULT: "#777CA1",
+              DEFAULT: "#E3A82B",
             },
             success: {
               foreground: "#FFFFFF",
-              DEFAULT: "#1D81A0",
+              DEFAULT: "#159890",
+            },
+            warning: {
+              foreground: "#FFFFFF",
+              DEFAULT: "#E95E10",
             },
             danger: {
               foreground: "#FFFFFF",
-              DEFAULT: "#C72116",
+              DEFAULT: "#DB241C",
             },
           },
         },
@@ -123,20 +131,25 @@ export default {
           colors: {
             background: "#242531",
             foreground: "#5A6581",
+            default: {
+              foreground: "#FFFFFF",
+              DEFAULT: "#777CA1",
+            },
             primary: {
-              50: "#1DA098",
               foreground: "#FFFFFF",
               DEFAULT: "#5B5FAE",
             },
             secondary: {
-              50: "#1DA098",
               foreground: "#FFFFFF",
-              DEFAULT: "#5A6581",
+              DEFAULT: "#E3A82B",
             },
             success: {
-              50: "#29B8AF",
               foreground: "#FFFFFF",
-              DEFAULT: "#1DA098",
+              DEFAULT: "#159890",
+            },
+            warning: {
+              foreground: "#FFFFFF",
+              DEFAULT: "#C85616",
             },
             danger: {
               foreground: "#FFFFFF",

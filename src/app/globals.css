@@ -30,7 +30,7 @@
     @apply dark:text-white-200;
   }
 
-  .regular-text {
+  .text-large {
     @apply text-lg;
     @apply font-normal;
     @apply text-black-50;
@@ -38,12 +38,27 @@
     @apply text-balance;
   }
 
-  .small-text {
+  .text-medium {
+    @apply text-base;
+    @apply font-normal;
+    @apply text-black-50;
+    @apply dark:text-gray-50;
+    @apply text-balance;
+  }
+
+  .text-small {
     @apply text-sm;
     @apply font-normal;
     @apply text-gray-500;
     @apply dark:text-gray-200;
     @apply text-balance;
+  }
+
+  .text-detail {
+    @apply text-base;
+    @apply font-normal;
+    @apply text-gray-400;
+    @apply uppercase;
   }
 
   .link {

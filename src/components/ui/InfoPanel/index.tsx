@@ -26,7 +26,7 @@ export default function InfoPanel({
         className="mb-4 w-full lg:col-start-15 lg:col-end-24 xl:col-start-14"
       />
       <h3 className="heading-2 mb-2">{title}</h3>
-      <p className="regular-text text-center">{description}</p>
+      <p className="text-center text-large">{description}</p>
     </div>
   );
 }
