@@ -9,7 +9,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
       <div className="flex h-screen overflow-hidden">
         <AppMenuLayout />
         <AppMobileMenuLayout />
-        <div className="flex flex-1 flex-col md:ml-16">
+        <div className="flex flex-1 flex-col md:ml-14">
           <AppHeader />
           <main className="overflow-scroll p-6 md:p-11">{children}</main>
         </div>

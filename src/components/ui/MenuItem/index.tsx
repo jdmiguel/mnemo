@@ -11,7 +11,7 @@ type MenuItemProps = {
 
 export default function MenuItem({ href, icon, text, active }: MenuItemProps) {
   return (
-    <li className="group relative h-14 items-center justify-center py-2">
+    <li className="group z-50 relative h-14 items-center justify-center py-2">
       <Link
         href={href}
         className={clsx(
@@ -27,7 +27,7 @@ export default function MenuItem({ href, icon, text, active }: MenuItemProps) {
         color="primary"
         radius="sm"
         className={clsx(
-          "pointer-events-none absolute left-16 top-3.5 z-10 origin-left scale-x-0 transition-transform ease-soft-spring",
+          "pointer-events-none absolute left-14 top-3.5 z-10 origin-left scale-x-0 transition-transform ease-soft-spring",
           {
             "group-hover:scale-x-100": !active,
           },

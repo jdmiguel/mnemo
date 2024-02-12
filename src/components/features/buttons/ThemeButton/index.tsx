@@ -4,7 +4,7 @@ import { MoonIcon } from "lucide-react";
 export default function ThemeButton() {
   return (
     <Button color="primary" aria-label="dark theme">
-      <MoonIcon />
+      <MoonIcon size={17} />
       <span>Dark theme</span>
     </Button>
   );

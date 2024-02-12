@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import { LogInIcon, PenSquareIcon } from "lucide-react";
 import { getServerAuthSession } from "@/server/auth";
 import Header from "@/components/ui/Header";
 import Link from "@/components/ui/Link";
@@ -23,6 +24,7 @@ export default async function HomePage() {
           </p>
           <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:[&_a]:flex-1">
             <Link color="primary" radius="sm" href="./auth/signin">
+            <LogInIcon size={17}/>
               Log in
             </Link>
             <Link
@@ -32,6 +34,7 @@ export default async function HomePage() {
               variant="flat"
               data-variant="flat"
             >
+              <PenSquareIcon size={17}/>
               Sign up
             </Link>
           </div>

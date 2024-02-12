@@ -1,9 +1,9 @@
 "use client";
 
+import clsx from "clsx";
 import type { LinkProps } from "next/link";
 import { type ButtonProps, useButton } from "@nextui-org/button";
 import Link from "next/link";
-import clsx from "clsx";
 
 type MnemoLinkSize = "small" | "normal";
 

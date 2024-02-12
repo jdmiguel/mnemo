@@ -7,7 +7,7 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
-import { LockKeyhole, Mail } from "lucide-react";
+import { LockKeyholeIcon, LogInIcon, MailIcon } from "lucide-react";
 import { SignInSchema } from "@/lib/schema";
 import TogglePasswordVisibilityButton from "@/components/features/buttons/TogglePasswordVisibilityButton";
 import Input from "@/components/ui/Input";
@@ -67,7 +67,7 @@ export default function SignInForm() {
         label="Email"
         placeholder="johndoe@gmail.com"
         startContent={
-          <Mail className="stroke-gray-400 dark:stroke-gray-300" size={15} />
+          <MailIcon className="stroke-gray-400 dark:stroke-gray-300" size={15} />
         }
         isInvalid={Boolean(errors.email)}
         errorMessage={errors.email?.message}
@@ -88,7 +88,7 @@ export default function SignInForm() {
         label="Password"
         placeholder="············"
         startContent={
-          <LockKeyhole
+          <LockKeyholeIcon
             className="stroke-gray-400 dark:stroke-gray-200"
             size={15}
           />
@@ -121,6 +121,7 @@ export default function SignInForm() {
       <Button
         type="submit"
         color="primary"
+        startContent={<LogInIcon size={17} />}
         fullWidth
         radius="sm"
         isLoading={isLoading}

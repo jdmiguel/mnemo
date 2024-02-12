@@ -58,7 +58,7 @@ export default function AppMenu({ isMobileMenu = false }: MenuItemsProps) {
   return (
     <>
       <h1
-        className={clsx("mb-4 p-1", {
+        className={clsx("mb-5", {
           hidden: isMobileMenu,
         })}
       >

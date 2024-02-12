@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 export default function SignOutButton() {
   return (
     <Button
-      startContent={<LogOutIcon size={18} />}
+      startContent={<LogOutIcon size={17} />}
       className="order-2 md:order-1"
       color="primary"
       onClick={() => signOut({ callbackUrl: "/" })}
