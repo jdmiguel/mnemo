@@ -125,7 +125,7 @@ export default function SignInForm() {
         radius="sm"
         isLoading={isLoading}
       >
-        Sign in
+        Log in
       </Button>
     </form>
   );

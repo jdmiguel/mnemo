@@ -31,7 +31,6 @@ export default function MobileMenuLayout() {
         </Button>
       </div>
       <AppMenu isMobileMenu />
-      <UserSettings />
     </aside>
   );
 }

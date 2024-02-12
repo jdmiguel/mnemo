@@ -1,12 +1,11 @@
-import { type ButtonProps } from "@nextui-org/button";
 import Button from "@/components/ui/Button";
-import { SunIcon } from "lucide-react";
+import { MoonIcon } from "lucide-react";
 
-export default function ThemeButton({ color, variant }: ButtonProps) {
+export default function ThemeButton() {
   return (
-    <Button color={color} variant={variant} aria-label="light theme">
-      <SunIcon />
-      <span>Light</span>
+    <Button color="primary" aria-label="dark theme">
+      <MoonIcon />
+      <span>Dark theme</span>
     </Button>
   );
 }

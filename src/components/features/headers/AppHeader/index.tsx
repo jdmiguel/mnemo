@@ -1,15 +1,25 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { Menu } from "lucide-react";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
-import UserSettings from "@/components/features/menus/UserSettingsMenu";
+import { User } from "@nextui-org/user";
 import Button from "@/components/ui/Button";
 import LogoIcon from "@/components/ui/LogoIcon";
 
 export default function AppHeader() {
   const pathname = usePathname();
   const breadcrumbs = pathname.substring(1, pathname.length);
+
+  const { data: session } = useSession();
+
+  const hasUserImage = Boolean(session?.user?.image);
+  const avatarImage = {
+    ...(hasUserImage
+      ? { src: session?.user?.image ?? "" }
+      : { name: session?.user?.name?.substring(0, 2) ?? "" }),
+  };
 
   const { updateStatus: updateMobileMenuStatus } = useMobileMenuStatus();
 
@@ -19,9 +29,20 @@ export default function AppHeader() {
         <LogoIcon />
       </h1>
       <p className="text-small capitalize">{breadcrumbs}</p>
-      <div className="hidden md:block">
-        <UserSettings withUserAvatar />
-      </div>
+      <User
+        name={session?.user?.name ?? ""}
+        classNames={{
+          base: "hidden md:flex",
+          name: "text-small",
+        }}
+        avatarProps={{
+          color: "default",
+          showFallback: true,
+          size: "sm",
+          className: "text-small uppercase font-medium",
+          ...avatarImage,
+        }}
+      />
       <div className="md:hidden">
         <Button
           color="primary"

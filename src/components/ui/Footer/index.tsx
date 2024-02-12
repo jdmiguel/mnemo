@@ -13,7 +13,7 @@ export default function Footer() {
         <a
           href="https://github.com/jdmiguel/mnemo"
           target="blank"
-          className="linkTextOnly"
+          className="link-textOnly"
         >
           github
         </a>

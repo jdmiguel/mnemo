@@ -1,52 +1,36 @@
-import { useSession } from "next-auth/react";
-import { ButtonProps } from "@nextui-org/button";
-import clsx from "clsx";
+import { Tooltip } from "@nextui-org/tooltip";
+import { SettingsIcon } from "lucide-react";
 import ThemeButton from "@/components/features/buttons/ThemeButton";
-import UserAvatarTooltip from "@/components/features/UserAvatarTooltip";
 import SignOutButton from "@/components/features/buttons/SignOutButton";
 
 type UserSettingsMenuProps = {
-  withUserAvatar?: boolean;
+  withTooltip: boolean;
 };
 
-export default function UserSettingsMenuProps({
-  withUserAvatar = false,
+export default function UserSettingsMenu({
+  withTooltip,
 }: UserSettingsMenuProps) {
-  const { data: session } = useSession();
-
-  const hasUserImage = Boolean(session?.user?.image);
-  const avatarImage = {
-    ...(hasUserImage
-      ? { src: session?.user?.image ?? "" }
-      : { name: session?.user?.name?.substring(0, 2) ?? "" }),
-  };
-
-  const themeButtonProps = {
-    color: "primary",
-    ...(withUserAvatar && { variant: "light" }),
-  } as ButtonProps;
-
-  const renderUserContent = () => {
-    if (withUserAvatar) {
-      return (
-        <UserAvatarTooltip
-          userName={session?.user?.name ?? ""}
-          avatarImage={avatarImage}
-        />
-      );
-    }
-
-    return <SignOutButton />;
-  };
-
-  return (
-    <div
-      className={clsx("flex gap-2", {
-        "w-48 flex-col justify-center": !withUserAvatar,
-      })}
-    >
-      <ThemeButton {...themeButtonProps} />
-      {renderUserContent()}
+  const userSettingsActions = (
+    <div className="flex flex-col gap-2 py-2">
+      <ThemeButton />
+      <SignOutButton />
     </div>
   );
+
+  if (withTooltip) {
+    return (
+      <Tooltip
+        content={userSettingsActions}
+        showArrow
+        placement="top-start"
+        offset={12}
+      >
+        <button type="button">
+          <SettingsIcon className="stroke-purple-100" size={24} />
+        </button>
+      </Tooltip>
+    );
+  }
+
+  return userSettingsActions;
 }

@@ -9,6 +9,8 @@ import {
   KanbanSquare,
   Calendar,
 } from "lucide-react";
+import UserSettingsMenu from "@/components/features/menus/UserSettingsMenu";
+import LogoIcon from "@/components/ui/LogoIcon";
 import MenuItem from "@/components/ui/MenuItem";
 import MobileMenuItem from "@/components/ui/MenuItem/MobileMenuItem";
 
@@ -54,22 +56,32 @@ export default function AppMenu({ isMobileMenu = false }: MenuItemsProps) {
   const Item = isMobileMenu ? MobileMenuItem : MenuItem;
 
   return (
-    <nav className="flex w-full justify-center">
-      <ul
-        className={clsx("flex w-48 flex-col items-center", {
-          "!items-start justify-center": isMobileMenu,
+    <>
+      <h1
+        className={clsx("mb-4 p-1", {
+          hidden: isMobileMenu,
         })}
       >
-        {menuItems.map((item) => (
-          <Item
-            key={item.href}
-            href={item.href}
-            icon={item.icon}
-            text={item.text}
-            active={item.href === pathname}
-          />
-        ))}
-      </ul>
-    </nav>
+        <LogoIcon />
+      </h1>
+      <nav className="flex w-full justify-center md:flex-1">
+        <ul
+          className={clsx("flex w-48 flex-col items-center", {
+            "!items-start justify-center": isMobileMenu,
+          })}
+        >
+          {menuItems.map((item) => (
+            <Item
+              key={item.href}
+              href={item.href}
+              icon={item.icon}
+              text={item.text}
+              active={item.href === pathname}
+            />
+          ))}
+        </ul>
+      </nav>
+      <UserSettingsMenu withTooltip={!isMobileMenu} />
+    </>
   );
 }

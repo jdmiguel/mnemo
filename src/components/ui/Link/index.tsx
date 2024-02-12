@@ -21,7 +21,7 @@ export default function MnemoLink({
 }: MnemoLinkProps) {
   const { styles: buttonStyles } = useButton(props);
 
-  const defaultStyles = isTextOnly ? "linkTextOnly" : `${buttonStyles} link`;
+  const defaultStyles = isTextOnly ? "link-textOnly" : `${buttonStyles} link`;
 
   return (
     <Link

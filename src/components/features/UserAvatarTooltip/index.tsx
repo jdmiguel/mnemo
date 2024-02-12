@@ -1,6 +1,7 @@
 import { Tooltip } from "@nextui-org/tooltip";
 import { Avatar, type AvatarProps } from "@nextui-org/avatar";
 import SignOutButton from "@/components/features/buttons/SignOutButton";
+import ThemeButton from "@/components/features/buttons/ThemeButton";
 
 type UserAvatarMenuProps = {
   userName: string;
@@ -14,13 +15,13 @@ export default function UserAvatarTooltip({
   return (
     <Tooltip
       content={
-        <div className="flex flex-col gap-3 p-3">
-          <p className="text-center text-small">{userName}</p>
+        <div className="flex flex-col gap-2 py-2">
+          <ThemeButton />
           <SignOutButton />
         </div>
       }
       showArrow
-      placement="bottom-end"
+      placement="top-start"
       offset={5}
     >
       <Avatar
