@@ -4,10 +4,9 @@ import clsx from "clsx";
 import { X } from "lucide-react";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
 import AppMenu from "@/components/features/menus/AppMenu";
-import UserSettings from "@/components/features/menus/UserSettingsMenu";
 import Button from "@/components/ui/Button";
 
-export default function MobileMenuLayout() {
+export default function AppMobileMenuLayout() {
   const { isOpen, updateStatus } = useMobileMenuStatus();
 
   return (

@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { Tooltip } from "@nextui-org/tooltip";
 import { SettingsIcon } from "lucide-react";
 import ThemeButton from "@/components/features/buttons/ThemeButton";
@@ -11,7 +12,7 @@ export default function UserSettingsMenu({
   withTooltip,
 }: UserSettingsMenuProps) {
   const userSettingsActions = (
-    <div className="flex flex-col gap-2 py-2">
+    <div className={clsx("flex gap-2 py-2", {"flex-col": withTooltip})}>
       <ThemeButton />
       <SignOutButton />
     </div>
