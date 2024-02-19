@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { toast } from "react-toastify";
-import Button from "@/components/ui/Button";
+import { Button } from "@nextui-org/button";
 
 export default function GoogleProviderButton() {
   const [isLoading, setIsLoading] = useState(false);
@@ -36,10 +36,11 @@ export default function GoogleProviderButton() {
   return (
     <Button
       color="primary"
+      radius="sm"
+      variant="flat"
       fullWidth
       onClick={onClick}
       isLoading={isLoading}
-      variant="flat"
     >
       Continue with Google
     </Button>

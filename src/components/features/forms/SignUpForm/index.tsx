@@ -6,11 +6,16 @@ import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
-import { LockKeyholeIcon, MailIcon, PenSquareIcon, UserIcon } from "lucide-react";
+import {
+  LockKeyholeIcon,
+  MailIcon,
+  PenSquareIcon,
+  UserIcon,
+} from "lucide-react";
 import { createUser } from "@/server/actions/user";
 import { SignUpSchema } from "@/lib/schema";
 import TogglePasswordVisibilityButton from "@/components/features/buttons/TogglePasswordVisibilityButton";
-import Button from "@/components/ui/Button";
+import { Button } from "@nextui-org/button";
 import Input from "@/components/ui/Input";
 
 export default function SignUpForm() {
@@ -64,7 +69,10 @@ export default function SignUpForm() {
         label="Name"
         placeholder="John Doe"
         startContent={
-          <UserIcon className="stroke-gray-400 dark:stroke-gray-200" size={15} />
+          <UserIcon
+            className="stroke-gray-400 dark:stroke-gray-200"
+            size={15}
+          />
         }
         isInvalid={Boolean(errors.name)}
         errorMessage={errors.name?.message}
@@ -78,7 +86,10 @@ export default function SignUpForm() {
         label="Email"
         placeholder="johndoe@gmail.com"
         startContent={
-          <MailIcon className="stroke-gray-400 dark:stroke-gray-300" size={15} />
+          <MailIcon
+            className="stroke-gray-400 dark:stroke-gray-300"
+            size={15}
+          />
         }
         isInvalid={Boolean(errors.email)}
         errorMessage={errors.email?.message}
@@ -126,7 +137,7 @@ export default function SignUpForm() {
       <Button
         type="submit"
         color="primary"
-        startContent={<PenSquareIcon size={17}/>}
+        startContent={<PenSquareIcon size={17} />}
         fullWidth
         radius="sm"
         isLoading={isLoading}

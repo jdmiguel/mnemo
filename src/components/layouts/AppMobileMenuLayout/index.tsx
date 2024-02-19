@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { X } from "lucide-react";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
 import AppMenu from "@/components/features/menus/AppMenu";
-import Button from "@/components/ui/Button";
+import { Button } from "@nextui-org/button";
 
 export default function AppMobileMenuLayout() {
   const { isOpen, updateStatus } = useMobileMenuStatus();
@@ -22,6 +22,7 @@ export default function AppMobileMenuLayout() {
         <Button
           color="primary"
           variant="light"
+          radius="sm"
           isIconOnly
           aria-label="menu mobile"
           onClick={updateStatus}

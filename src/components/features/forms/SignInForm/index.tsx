@@ -11,7 +11,7 @@ import { LockKeyholeIcon, LogInIcon, MailIcon } from "lucide-react";
 import { SignInSchema } from "@/lib/schema";
 import TogglePasswordVisibilityButton from "@/components/features/buttons/TogglePasswordVisibilityButton";
 import Input from "@/components/ui/Input";
-import Button from "@/components/ui/Button";
+import { Button } from "@nextui-org/button";
 
 export default function SignInForm() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -67,7 +67,10 @@ export default function SignInForm() {
         label="Email"
         placeholder="johndoe@gmail.com"
         startContent={
-          <MailIcon className="stroke-gray-400 dark:stroke-gray-300" size={15} />
+          <MailIcon
+            className="stroke-gray-400 dark:stroke-gray-300"
+            size={15}
+          />
         }
         isInvalid={Boolean(errors.email)}
         errorMessage={errors.email?.message}

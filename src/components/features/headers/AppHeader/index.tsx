@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { Menu } from "lucide-react";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
 import { User } from "@nextui-org/user";
-import Button from "@/components/ui/Button";
+import { Button } from "@nextui-org/button";
 import LogoIcon from "@/components/ui/LogoIcon";
 
 export default function AppHeader() {
@@ -24,7 +24,7 @@ export default function AppHeader() {
   const { updateStatus: updateMobileMenuStatus } = useMobileMenuStatus();
 
   return (
-    <header className="bg-white-500 sticky flex min-h-14 w-full items-center justify-between border-b-1 border-gray-200 py-2 pl-5 pr-3 text-sm dark:border-black-50 md:pl-7 md:pr-7">
+    <header className="bg-white-500 sticky flex min-h-14 w-full items-center justify-between border-b-1 border-gray-50 py-2 pl-5 pr-3 text-sm dark:border-black-50 md:pl-7 md:pr-7">
       <h1 className="w-8 md:hidden">
         <LogoIcon />
       </h1>

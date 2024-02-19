@@ -1,5 +1,5 @@
 import { FoldVerticalIcon, UnfoldVerticalIcon } from "lucide-react";
-import Button from "@/components/ui/Button";
+import { Button } from "@nextui-org/button";
 
 type ToggleAllButtonProps = {
   type: "expand" | "collapse";
@@ -15,7 +15,12 @@ export default function ToggleAllButton({
   const text = `${isExpandType ? "Expand" : "Collapse"} all`;
 
   return (
-    <Button startContent={<Icon size={17} />} color="default" onClick={onClick}>
+    <Button
+      radius="sm"
+      startContent={<Icon size={17} />}
+      color="default"
+      onClick={onClick}
+    >
       {text}
     </Button>
   );

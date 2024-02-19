@@ -1,5 +1,5 @@
 import { EyeIcon, EyeOffIcon } from "lucide-react";
-import Button from "@/components/ui/Button";
+import { Button } from "@nextui-org/button";
 
 type TogglePasswordVisibilityButtonProps = {
   type: "show" | "hide";
@@ -14,9 +14,10 @@ export default function TogglePasswordVisibilityButton({
 
   return (
     <Button
-      className="h-auto w-auto min-w-0 hover:!bg-transparent"
-      isIconOnly
       variant="light"
+      radius="sm"
+      isIconOnly
+      className="h-auto w-auto min-w-0 hover:!bg-transparent"
       onClick={onClick}
     >
       {<Icon className="stroke-purple-100" size={15} />}
