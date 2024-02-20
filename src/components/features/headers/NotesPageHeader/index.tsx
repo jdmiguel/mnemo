@@ -19,8 +19,9 @@ export default function NotesPageHeader() {
       </PageHeader.TopWrapper>
       <PageHeader.Filters>
         <Input
-          className="w-full max-w-64"
-          endContent={<SearchIcon className="stroke-gray-400" />}
+          className="max-w-64"
+          withShortHeight
+          endContent={<SearchIcon className="stroke-gray-400" size={18} />}
           type="text"
           placeholder="Search note by title"
         />

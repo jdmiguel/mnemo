@@ -46,8 +46,8 @@ export default function PriorityMenu() {
         <Button
           variant="flat"
           radius="sm"
-          className="w-32 items-center justify-between gap-0 bg-gray-100 text-black-50"
-          endContent={<ChevronDownIcon size={17} className="stroke-black-50" />}
+          className="w-32 items-center justify-between gap-0 bg-gray-100 text-gray-500"
+          endContent={<ChevronDownIcon size={18} className="stroke-gray-400" />}
         >
           Priority
         </Button>
