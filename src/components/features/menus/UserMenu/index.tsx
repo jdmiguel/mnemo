@@ -26,13 +26,12 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
         <Avatar
           as="button"
           color="primary"
-          className="uppercase transition-transform"
+          className="text-small uppercase transition-transform"
           {...userImage}
         />
       </DropdownTrigger>
       <DropdownMenu
         aria-label="User Actions"
-        variant="flat"
         disabledKeys={["profile"]}
         classNames={{ base: "p-2 " }}
       >
