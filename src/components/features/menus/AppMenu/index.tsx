@@ -9,7 +9,6 @@ import {
   KanbanSquare,
   Calendar,
 } from "lucide-react";
-import UserSettingsMenu from "@/components/features/menus/UserSettingsMenu";
 import LogoIcon from "@/components/ui/LogoIcon";
 import MenuItem from "@/components/ui/MenuItem";
 import MobileMenuItem from "@/components/ui/MenuItem/MobileMenuItem";
@@ -81,7 +80,6 @@ export default function AppMenu({ isMobileMenu = false }: MenuItemsProps) {
           ))}
         </ul>
       </nav>
-      <UserSettingsMenu withTooltip={!isMobileMenu} />
     </>
   );
 }

@@ -19,7 +19,7 @@ export default function NotesPageHeader() {
       </PageHeader.TopWrapper>
       <PageHeader.Filters>
         <Input
-          className="max-w-64"
+          className="sm:max-w-56"
           withShortHeight
           endContent={<SearchIcon className="stroke-gray-400" size={18} />}
           type="text"

@@ -7,6 +7,7 @@ export default function SignOutButton() {
     <Button
       color="primary"
       radius="sm"
+      fullWidth
       startContent={<LogOutIcon size={17} />}
       className="order-2 md:order-1"
       onClick={() => signOut({ callbackUrl: "/" })}
