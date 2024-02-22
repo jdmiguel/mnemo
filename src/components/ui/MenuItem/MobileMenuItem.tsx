@@ -16,22 +16,25 @@ export default function MobileMenuItem({
 }: MobileMenuItemProps) {
   return (
     <li
-      className={clsx("group relative h-14 w-full items-center py-2", {
-        "rounded-md bg-white-200": active,
-      })}
+      className={clsx(
+        "group relative flex w-full flex-1 items-center border-t-1 p-8",
+        {
+          "bg-white-200": active,
+        },
+      )}
     >
       <Link
         href={href}
         className={clsx(
-          "flex !h-full !min-w-0 items-center justify-center gap-unit-md bg-transparent text-purple-100 ",
+          "flex-1 !justify-start bg-transparent text-purple-100",
           {
-            "pointer-events-none bg-white-200 !text-purple-200": active,
+            "pointer-events-none": active,
           },
         )}
       >
         {icon}
         <span
-          className={clsx("text-xl text-purple-100", {
+          className={clsx("ml-2 text-2xl", {
             "!text-purple-200": active,
           })}
         >

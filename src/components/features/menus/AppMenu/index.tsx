@@ -14,7 +14,7 @@ import MenuItem from "@/components/ui/MenuItem";
 import MobileMenuItem from "@/components/ui/MenuItem/MobileMenuItem";
 
 const iconProps = {
-  size: 26,
+  size: 28,
 };
 
 const menuItems = [
@@ -63,10 +63,14 @@ export default function AppMenu({ isMobileMenu = false }: MenuItemsProps) {
       >
         <LogoIcon />
       </h1>
-      <nav className="flex w-full justify-center md:flex-1">
+      <nav
+        className={clsx({
+          "h-[calc(100vh-57px)] w-full": isMobileMenu,
+        })}
+      >
         <ul
           className={clsx("flex w-48 flex-col items-center", {
-            "!items-start justify-center": isMobileMenu,
+            "h-full w-full": isMobileMenu,
           })}
         >
           {menuItems.map((item) => (
