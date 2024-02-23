@@ -21,7 +21,12 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
   };
 
   return (
-    <Dropdown placement="bottom-end" showArrow offset={4}>
+    <Dropdown
+      classNames={{ base: "max-w-56" }}
+      placement="bottom-end"
+      showArrow
+      offset={4}
+    >
       <DropdownTrigger>
         <Avatar
           as="button"
@@ -40,7 +45,7 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
           classNames={{ base: "mb-5", group: "data-[has-title=true]:pt-0" }}
         >
           <DropdownItem key="profile" className="py-0 opacity-hover">
-            <p className="text-black-200">{email}</p>
+            <p className="truncate text-black-200">{email}</p>
           </DropdownItem>
         </DropdownSection>
         <DropdownItem key="theme" className="mb-2 p-0">
