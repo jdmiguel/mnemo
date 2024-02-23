@@ -21,7 +21,7 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
   };
 
   return (
-    <Dropdown placement="bottom-end">
+    <Dropdown placement="bottom-end" showArrow offset={4}>
       <DropdownTrigger>
         <Avatar
           as="button"
@@ -33,17 +33,17 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
       <DropdownMenu
         aria-label="User Actions"
         disabledKeys={["profile"]}
-        classNames={{ base: "p-2 " }}
+        classNames={{ base: "p-2" }}
       >
         <DropdownSection
           title="Signed in as"
-          classNames={{ base: "mb-3 ", group: "data-[has-title=true]:pt-0" }}
+          classNames={{ base: "mb-5", group: "data-[has-title=true]:pt-0" }}
         >
           <DropdownItem key="profile" className="py-0 opacity-hover">
             <p className="text-black-200">{email}</p>
           </DropdownItem>
         </DropdownSection>
-        <DropdownItem key="theme" className="mb-1.5 p-0">
+        <DropdownItem key="theme" className="mb-2 p-0">
           <ThemeButton />
         </DropdownItem>
         <DropdownItem key="signOut" className="p-0">

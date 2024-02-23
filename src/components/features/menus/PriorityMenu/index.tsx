@@ -38,10 +38,15 @@ export default function PriorityMenu() {
   return (
     <Dropdown
       classNames={{
-        content: "bg-gray-100 p-0 min-w-48 sm:min-w-[124px] rounded-sm",
+        content: "bg-gray-100 p-0 min-w-40 sm:min-w-32 rounded-sm",
       }}
       triggerScaleOnOpen={false}
       placement="bottom-start"
+      motionProps={{
+        initial: { opacity: 0, scaleY: 0, y: -20 },
+        animate: { opacity: 1, scaleY: 1, y: 0 },
+        exit: { opacity: 0 },
+      }}
     >
       <DropdownTrigger>
         <Button
