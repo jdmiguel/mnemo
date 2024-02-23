@@ -38,15 +38,15 @@ export default function PriorityMenu() {
   return (
     <Dropdown
       classNames={{
-        content: "bg-gray-100 p-0 min-w-[124px] rounded-sm",
+        content: "bg-gray-100 p-0 min-w-48 sm:min-w-[124px] rounded-sm",
       }}
-      radius="sm"
+      triggerScaleOnOpen={false}
+      placement="bottom-start"
     >
       <DropdownTrigger>
         <Button
-          variant="flat"
           radius="sm"
-          className="w-2/4 items-center justify-between gap-0 bg-gray-100 text-gray-500 sm:w-32"
+          className="w-1/2 items-center justify-between gap-0 bg-gray-100 text-gray-500 sm:w-32"
           endContent={<ChevronDownIcon size={18} className="stroke-gray-400" />}
         >
           Priority
@@ -58,7 +58,7 @@ export default function PriorityMenu() {
         selectedKeys={selectedKey}
         onSelectionChange={(key) => setSelectedKey(key as PriorityKey)}
         classNames={{
-          base: "p-0",
+          base: "p-0 w-full",
           list: "gap-0",
         }}
         aria-label="Priority options"
@@ -66,7 +66,7 @@ export default function PriorityMenu() {
         {(item) => (
           <DropdownItem
             key={item.key}
-            className="mb-0 p-2 after:bottom-0 after:bg-white-200 data-[focus-visible=true]:bg-gray-50 data-[selectable=true]:focus:bg-gray-50 data-[selectable=true]:focus:text-gray-500"
+            className="mb-0 p-2 after:bottom-0 after:bg-white-200 data-[focus-visible=true]:bg-gray-50 data-[selectable=true]:focus:rounded-none data-[selectable=true]:focus:bg-gray-50 data-[selectable=true]:focus:text-gray-500"
             classNames={{
               selectedIcon: "data-[selectable=true]:focus:opacity-0",
             }}

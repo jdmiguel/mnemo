@@ -10,13 +10,11 @@ import Input from "@/components/ui/Input";
 export default function NotesPageHeader() {
   return (
     <PageHeader>
-      <PageHeader.TopWrapper>
-        <PageHeader.Title>Notes</PageHeader.Title>
-        <PageHeader.Actions>
-          <AddButton itemText="note" onClick={() => {}} />
-          <ToggleAllButton type="expand" onClick={() => {}} />
-        </PageHeader.Actions>
-      </PageHeader.TopWrapper>
+      <PageHeader.Title>Notes</PageHeader.Title>
+      <PageHeader.Actions>
+        <AddButton itemText="note" onClick={() => {}} />
+        <ToggleAllButton type="expand" onClick={() => {}} />
+      </PageHeader.Actions>
       <PageHeader.Filters>
         <Input
           className="sm:max-w-56"
