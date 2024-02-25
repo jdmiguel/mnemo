@@ -51,7 +51,7 @@ export default function PriorityMenu() {
       <DropdownTrigger>
         <Button
           radius="sm"
-          className="w-1/2 items-center justify-between gap-0 bg-gray-100 text-gray-500 sm:w-32"
+          className="w-full items-center justify-between gap-3 bg-gray-100 text-gray-500 sm:w-fit"
           endContent={<ChevronDownIcon size={18} className="stroke-gray-400" />}
         >
           Priority

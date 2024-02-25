@@ -1,0 +1,35 @@
+.rdp-caption_label {
+  @apply text-medium;
+}
+
+.rdp-nav_icon > path {
+  @apply fill-purple-100;
+}
+
+.rdp-head_cell {
+  @apply text-gray-600;
+}
+
+.rdp-button {
+  @apply transition-colors;
+  @apply text-black-50;
+}
+
+.rdp-button:hover:not([disabled]):not(.rdp-day_selected) {
+  @apply bg-transparent;
+  @apply bg-purple-100;
+  @apply bg-opacity-25;
+}
+
+.rdp-day_today:not(.rdp-day_outside) {
+  @apply text-black-200;
+}
+
+.rdp-day_selected:not([disabled]) {
+  @apply bg-purple-200;
+  @apply text-white-50;
+}
+.rdp-day_selected:hover:not([disabled]) {
+  @apply bg-purple-100;
+  @apply text-white-200;
+}

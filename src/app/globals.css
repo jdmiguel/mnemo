@@ -87,4 +87,8 @@
     @apply before:transition-transform;
     @apply hover:before:scale-x-100;
   }
+
+  .rdp-day_today:not(.rdp-day_outside) {
+    color: red;
+  }
 }
