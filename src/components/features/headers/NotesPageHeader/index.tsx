@@ -20,7 +20,7 @@ export default function NotesPageHeader() {
         <Input
           className="sm:w-fit"
           withShortHeight
-          endContent={<SearchIcon className="stroke-gray-400" size={18} />}
+          endContent={<SearchIcon className="stroke-gray-500" size={18} />}
           type="text"
           placeholder="Search note by title"
         />

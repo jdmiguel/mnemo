@@ -8,6 +8,7 @@ import {
 import { Avatar } from "@nextui-org/avatar";
 import ThemeButton from "@/components/features/buttons/ThemeButton";
 import SignOutButton from "@/components/features/buttons/SignOutButton";
+import { OFFSET_MENU } from "@/utils";
 
 type UserMenuProps = {
   name: string;
@@ -25,7 +26,7 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
       classNames={{ base: "max-w-56" }}
       placement="bottom-end"
       showArrow
-      offset={4}
+      offset={OFFSET_MENU}
     >
       <DropdownTrigger>
         <Avatar

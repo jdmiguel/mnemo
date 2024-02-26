@@ -11,7 +11,7 @@ import {
 } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import "./styles.css";
-import { ANIMATION } from "@/utils";
+import { ANIMATION, OFFSET_MENU } from "@/utils";
 
 const DEFAULT_DATE_TEXT = "Date range";
 
@@ -62,15 +62,16 @@ export default function DateMenu() {
       isOpen={isOpen}
       onOpenChange={(open) => setIsOpen(open)}
       placement="bottom-start"
-      triggerScaleOnOpen={false}
+      offset={OFFSET_MENU}
       motionProps={ANIMATION.filter}
       shouldBlockScroll
+      shouldCloseOnBlur
     >
       <PopoverTrigger>
         <Button
           radius="sm"
           className="w-full items-center justify-between gap-3 bg-gray-100 text-gray-500 sm:w-fit"
-          endContent={<CalendarIcon size={18} className="stroke-gray-400" />}
+          endContent={<CalendarIcon size={18} className="stroke-gray-500" />}
           onClick={() => setIsOpen(true)}
         >
           {selectedDateText}
