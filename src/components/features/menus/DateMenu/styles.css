@@ -2,6 +2,14 @@
   @apply text-medium;
 }
 
+.rdp-button:focus-visible:not([disabled]) {
+  @apply border-purple-100;
+  @apply bg-transparent;
+}
+
+.rdp-button:focus-visible:not([disabled]) {
+}
+
 .rdp-nav_icon > path {
   @apply fill-purple-100;
 }

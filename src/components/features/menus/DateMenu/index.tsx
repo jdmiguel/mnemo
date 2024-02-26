@@ -11,6 +11,7 @@ import {
 } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import "./styles.css";
+import { ANIMATION } from "@/utils";
 
 const DEFAULT_DATE_TEXT = "Date range";
 
@@ -62,6 +63,8 @@ export default function DateMenu() {
       onOpenChange={(open) => setIsOpen(open)}
       placement="bottom-start"
       triggerScaleOnOpen={false}
+      motionProps={ANIMATION.filter}
+      shouldBlockScroll
     >
       <PopoverTrigger>
         <Button

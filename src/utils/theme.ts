@@ -1,3 +1,12 @@
+import { Priority, StatusColor } from "@/types";
+
+export const PRIORITY_COLOR: Record<Priority, StatusColor> = {
+  low: "success",
+  medium: "secondary",
+  high: "warning",
+  critical: "danger",
+};
+
 export const enum COLORS {
   TRANSPARENT = "transparent",
   RED_50 = "#C72116",

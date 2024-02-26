@@ -1,8 +1,4 @@
-import { Priority, StatusColor } from "@/types";
+import { ANIMATION } from "./animations";
+import { PRIORITY_COLOR, COLORS } from "./theme";
 
-export const priorityColor: Record<Priority, StatusColor> = {
-  low: "success",
-  medium: "secondary",
-  high: "warning",
-  critical: "danger",
-};
+export { ANIMATION, PRIORITY_COLOR, COLORS };

@@ -7,6 +7,7 @@ import {
 } from "@nextui-org/dropdown";
 import { ChevronDownIcon, CircleIcon } from "lucide-react";
 import { Button } from "@nextui-org/button";
+import { ANIMATION } from "@/utils";
 
 type PriorityKey = "low" | "medium" | "high" | "critical";
 
@@ -38,15 +39,11 @@ export default function PriorityMenu() {
   return (
     <Dropdown
       classNames={{
-        content: "bg-gray-100 p-0 min-w-40 sm:min-w-32 rounded-sm",
+        content: "bg-gray-100 p-0 rounded-sm w-full sm:min-w-fit",
       }}
       triggerScaleOnOpen={false}
       placement="bottom-start"
-      motionProps={{
-        initial: { opacity: 0, scaleY: 0, y: -20 },
-        animate: { opacity: 1, scaleY: 1, y: 0 },
-        exit: { opacity: 0 },
-      }}
+      motionProps={ANIMATION.filter}
     >
       <DropdownTrigger>
         <Button
@@ -63,7 +60,7 @@ export default function PriorityMenu() {
         selectedKeys={selectedKey}
         onSelectionChange={(key) => setSelectedKey(key as PriorityKey)}
         classNames={{
-          base: "p-0 w-full",
+          base: "p-0",
           list: "gap-0",
         }}
         aria-label="Priority options"
