@@ -40,8 +40,8 @@ export default function DateMenu() {
       return;
     }
 
-    const startDateText = format(startRange, "MM/dd/yyyy");
-    const endDateText = format(endRange ?? startRange, "MM/dd/yyyy");
+    const startDateText = format(startRange, "dd/MM/yyyy");
+    const endDateText = format(endRange ?? startRange, "dd/MM/yyyy");
     const displayedDateText =
       startDateText === endDateText
         ? startDateText
