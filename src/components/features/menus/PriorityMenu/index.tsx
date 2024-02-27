@@ -9,7 +9,7 @@ import { AlertCircleIcon } from "lucide-react";
 import { Button } from "@nextui-org/button";
 import { ANIMATION, OFFSET_MENU } from "@/utils";
 
-const PRIORITY_PLACEHOLDER = "Priority";
+const PRIORITY_PLACEHOLDER = "priority";
 
 export default function PriorityMenu() {
   const items = useMemo(
@@ -33,6 +33,7 @@ export default function PriorityMenu() {
     ],
     [],
   );
+
   const [selectedKeys, setSelectedKeys] = useState(
     new Set([PRIORITY_PLACEHOLDER]),
   );
@@ -49,12 +50,12 @@ export default function PriorityMenu() {
       }}
       placement="bottom-start"
       offset={OFFSET_MENU}
-      motionProps={ANIMATION.filter}
+      motionProps={ANIMATION.accordion}
     >
       <DropdownTrigger>
         <Button
           radius="sm"
-          className="w-full items-center justify-between gap-3 bg-gray-100 text-gray-500 sm:w-44"
+          className="w-full items-center justify-between gap-3 bg-gray-100 capitalize text-gray-500 sm:w-44"
           endContent={<AlertCircleIcon size={18} className="stroke-gray-500" />}
         >
           {selectedKeys.has(PRIORITY_PLACEHOLDER)
@@ -76,10 +77,7 @@ export default function PriorityMenu() {
         {(item) => (
           <DropdownItem
             key={item.key}
-            className="mb-0 p-2 after:bottom-0 after:bg-white-200 data-[focus-visible=true]:bg-gray-50 data-[selectable=true]:focus:rounded-none data-[selectable=true]:focus:bg-gray-50 data-[selectable=true]:focus:text-gray-500"
-            classNames={{
-              selectedIcon: "data-[selectable=true]:focus:opacity-0",
-            }}
+            className="mb-0 p-3 after:bottom-0 after:bg-white-200 data-[selectable=true]:focus:rounded-none data-[selectable=true]:focus:bg-gray-50 data-[selectable=true]:focus:text-gray-500"
             startContent={
               <AlertCircleIcon
                 className="data-[key=critical]:stroke-red-100 data-[key=high]:stroke-orange data-[key=low]:stroke-green-100 data-[key=medium]:stroke-yellow"
@@ -90,7 +88,7 @@ export default function PriorityMenu() {
             }
             showDivider={item.key !== items.at(-1)?.key}
           >
-            {item.key}
+            {item.label}
           </DropdownItem>
         )}
       </DropdownMenu>

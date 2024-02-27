@@ -63,14 +63,14 @@ export default function DateMenu() {
       onOpenChange={(open) => setIsOpen(open)}
       placement="bottom-start"
       offset={OFFSET_MENU}
-      motionProps={ANIMATION.filter}
+      motionProps={ANIMATION.accordion}
       shouldBlockScroll
       shouldCloseOnBlur
     >
       <PopoverTrigger>
         <Button
           radius="sm"
-          className="w-full items-center justify-between gap-3 bg-gray-100 text-gray-500 sm:w-fit"
+          className="w-full items-center justify-between gap-3 bg-gray-100 text-gray-500 sm:w-56"
           endContent={<CalendarIcon size={18} className="stroke-gray-500" />}
           onClick={() => setIsOpen(true)}
         >

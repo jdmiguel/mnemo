@@ -8,7 +8,7 @@ import {
 import { Avatar } from "@nextui-org/avatar";
 import ThemeButton from "@/components/features/buttons/ThemeButton";
 import SignOutButton from "@/components/features/buttons/SignOutButton";
-import { OFFSET_MENU } from "@/utils";
+import { ANIMATION, OFFSET_MENU } from "@/utils";
 
 type UserMenuProps = {
   name: string;
@@ -27,6 +27,7 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
       placement="bottom-end"
       showArrow
       offset={OFFSET_MENU}
+      motionProps={ANIMATION.speechBubble}
     >
       <DropdownTrigger>
         <Avatar
