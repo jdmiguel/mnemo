@@ -1,3 +1,4 @@
+import { Key } from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -12,14 +13,17 @@ type Action = {
   key: string;
   label: string;
   icon: React.ReactNode;
-  onClick: () => void;
 };
 
 type ActionsMenuProps = {
   actions: Action[];
+  onClickAction: (key: Key) => void;
 };
 
-export default function ActionsMenu({ actions }: ActionsMenuProps) {
+export default function ActionsMenu({
+  actions,
+  onClickAction,
+}: ActionsMenuProps) {
   return (
     <Dropdown
       classNames={{
@@ -50,6 +54,7 @@ export default function ActionsMenu({ actions }: ActionsMenuProps) {
           list: "gap-0",
         }}
         aria-label="Actions"
+        onAction={onClickAction}
       >
         {(action) => (
           <DropdownItem

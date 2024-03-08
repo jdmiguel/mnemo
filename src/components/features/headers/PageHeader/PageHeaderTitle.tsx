@@ -1,4 +1,4 @@
-export type PageHeaderTitle = {
+type PageHeaderTitle = {
   children: string;
 };
 

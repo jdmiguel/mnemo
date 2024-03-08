@@ -7,16 +7,14 @@ type PageHeaderProps = {
   children?: ReactElement | ReactElement[];
 };
 
-function PageHeader({ children }: PageHeaderProps) {
+export default function PageHeader({ children }: PageHeaderProps) {
   return (
-    <div className="grid grid-cols-6 gap-y-4 rounded-sm bg-white-300 p-6">
+    <header className="grid grid-cols-6 gap-y-4 rounded-sm bg-white-300 p-6">
       {children}
-    </div>
+    </header>
   );
 }
 
 PageHeader.Title = PageHeaderTitle;
 PageHeader.Actions = PageHeaderActions;
 PageHeader.Filters = PageHeaderFilters;
-
-export default PageHeader;

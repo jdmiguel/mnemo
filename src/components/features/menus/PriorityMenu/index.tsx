@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { Key, useMemo, useState } from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -8,10 +8,20 @@ import {
 import { AlertCircleIcon } from "lucide-react";
 import { Button } from "@nextui-org/button";
 import { ANIMATION, OFFSET_MENU } from "@/utils";
+import { Priority } from "@/types";
+import { on } from "events";
 
 const PRIORITY_PLACEHOLDER = "priority";
 
-export default function PriorityMenu() {
+type PriorityMenuProps = {
+  defaultPriority?: Priority;
+  onClickPriority: (key: Key) => void;
+};
+
+export default function PriorityMenu({
+  defaultPriority,
+  onClickPriority,
+}: PriorityMenuProps) {
   const items = useMemo(
     () => [
       {
@@ -35,7 +45,7 @@ export default function PriorityMenu() {
   );
 
   const [selectedKeys, setSelectedKeys] = useState(
-    new Set([PRIORITY_PLACEHOLDER]),
+    new Set([defaultPriority ?? PRIORITY_PLACEHOLDER]),
   );
 
   const selectedValue = useMemo(
@@ -68,6 +78,7 @@ export default function PriorityMenu() {
         selectionMode="single"
         selectedKeys={selectedKeys}
         onSelectionChange={(keys) => setSelectedKeys(keys as Set<string>)}
+        onAction={onClickPriority}
         classNames={{
           base: "p-0 min-w-full sm:min-w-44",
           list: "gap-0",

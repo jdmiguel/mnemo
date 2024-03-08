@@ -1,10 +1,12 @@
-import { ThemeColors } from "@nextui-org/theme";
+import type { ExtendedThemeColors, StatusColor } from "./theme";
+import type { View } from "./view";
+import type { Priority } from "./priority";
+import type { InteractiveBlock } from "./interactiveBlock";
 
-export type ExtendedThemeColors = ThemeColors & { attention: string };
-
-export type StatusColor = keyof Pick<
+export type {
   ExtendedThemeColors,
-  "success" | "secondary" | "warning" | "danger"
->;
-
-export type Priority = "low" | "medium" | "high" | "critical";
+  StatusColor,
+  View,
+  Priority,
+  InteractiveBlock,
+};

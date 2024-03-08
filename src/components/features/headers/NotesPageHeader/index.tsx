@@ -18,13 +18,13 @@ export default function NotesPageHeader() {
       </PageHeader.Actions>
       <PageHeader.Filters>
         <Input
-          className="sm:w-fit"
-          withShortHeight
-          endContent={<SearchIcon className="stroke-gray-500" size={18} />}
           type="text"
+          className="sm:w-fit"
+          endContent={<SearchIcon className="stroke-gray-500" size={18} />}
           placeholder="Search note by title"
+          isLowHeight
         />
-        <PriorityMenu />
+        <PriorityMenu onClickPriority={() => {}} />
         <DateMenu />
       </PageHeader.Filters>
     </PageHeader>
