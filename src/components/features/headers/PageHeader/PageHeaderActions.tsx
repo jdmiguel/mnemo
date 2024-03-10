@@ -8,7 +8,7 @@ export default function PageHeaderActions({
   children,
 }: PageHeaderActionsProps) {
   return (
-    <div className="col-start-1 col-end-7 row-start-2 flex gap-2 sm:col-start-2 sm:row-start-1 sm:justify-self-end">
+    <div className="col-span-24 flex gap-2 sm:col-span-12 sm:justify-self-end">
       {children}
     </div>
   );

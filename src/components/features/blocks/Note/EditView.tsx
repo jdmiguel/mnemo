@@ -31,30 +31,36 @@ export default function EditView({
   };
 
   return (
-    <div className="grid grid-cols-6 gap-y-4">
-      <div className="col-start-1 col-end-7 flex gap-2 sm:col-end-4">
+    <>
+      <div className="col-span-24 sm:col-span-10 lg:col-span-6">
         <Input
           type="text"
           value={selectedTitle}
           onChange={(e) => setSelectedTitle(e.target.value)}
-          className="sm:w-fit"
-          placeholder="Search note by title"
           isLowHeight
         />
+      </div>
+      <div className="col-span-24 sm:col-span-7 lg:col-span-5">
         <PriorityMenu
           defaultPriority={selectedPriority}
           onClickPriority={(key) => setSelectedPriority(key as Priority)}
         />
       </div>
-      <div className="col-start-5 col-end-7 flex justify-end gap-2">
+      <div className="col-span-24">
+        <TextArea
+          value={selectedContent}
+          onChange={(e) => setSelectedContent(e.target.value)}
+        />
+      </div>
+      {/* <div className="col-span-12 sm:col-span-5 lg:col-span-4">
+        <SaveButton onClick={onClickSave} />
+      </div>
+      <div className="col-span-12 sm:col-span-5 lg:col-span-4">
+    </div> */}
+      <div className="col-span-24 flex gap-2 justify-self-end sm:col-span-5 sm:justify-self-start lg:col-span-12">
         <SaveButton onClick={onClickSave} />
         <CancelButton onClick={onCancel} />
       </div>
-      <TextArea
-        value={selectedContent}
-        className="col-start-1 col-end-7 bg-gray-200"
-        onChange={(e) => setSelectedContent(e.target.value)}
-      />
-    </div>
+    </>
   );
 }

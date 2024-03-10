@@ -16,14 +16,16 @@ export default function DisplayView({
 }: DisplayViewProps) {
   return (
     <>
-      <InteractiveBlockHeader
-        title={title}
-        priority={priority}
-        date={date}
-        onEdit={onEdit}
-        onDelete={onDelete}
-      />
-      <p className="text-medium">{content}</p>
+      <div className="col-span-24">
+        <InteractiveBlockHeader
+          title={title}
+          priority={priority}
+          date={date}
+          onEdit={onEdit}
+          onDelete={onDelete}
+        />
+      </div>
+      <p className="col-span-24 text-medium">{content}</p>
     </>
   );
 }

@@ -18,7 +18,6 @@ export default function ToggleAllButton({
     <Button
       color="default"
       radius="sm"
-      fullWidth
       startContent={<Icon size={17} />}
       onClick={onClick}
     >

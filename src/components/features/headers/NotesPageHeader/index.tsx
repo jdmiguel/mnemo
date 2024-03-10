@@ -1,12 +1,11 @@
 "use client";
 
-import { SearchIcon } from "lucide-react";
 import PageHeader from "@/components/features/headers/PageHeader";
 import AddButton from "@/components/features/buttons/AddButton";
 import ToggleAllButton from "@/components/features/buttons/ToggleAllButton";
+import SearchInput from "@/components/features/inputs/SearchInput";
 import PriorityMenu from "@/components/features/menus/PriorityMenu";
 import DateMenu from "@/components/features/menus/DateMenu";
-import Input from "@/components/ui/Input";
 
 export default function NotesPageHeader() {
   return (
@@ -17,13 +16,7 @@ export default function NotesPageHeader() {
         <ToggleAllButton type="expand" onClick={() => {}} />
       </PageHeader.Actions>
       <PageHeader.Filters>
-        <Input
-          type="text"
-          className="sm:w-fit"
-          endContent={<SearchIcon className="stroke-gray-500" size={18} />}
-          placeholder="Search note by title"
-          isLowHeight
-        />
+        <SearchInput searchType="note" onSearch={() => {}} />
         <PriorityMenu onClickPriority={() => {}} />
         <DateMenu />
       </PageHeader.Filters>

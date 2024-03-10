@@ -5,11 +5,10 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "@nextui-org/dropdown";
-import { AlertCircleIcon } from "lucide-react";
 import { Button } from "@nextui-org/button";
+import { AlertCircleIcon } from "lucide-react";
 import { ANIMATION, OFFSET_MENU } from "@/utils";
 import { Priority } from "@/types";
-import { on } from "events";
 
 const PRIORITY_PLACEHOLDER = "priority";
 
@@ -56,7 +55,7 @@ export default function PriorityMenu({
   return (
     <Dropdown
       classNames={{
-        content: "bg-gray-100 p-0 rounded-sm w-full sm:min-w-fit",
+        content: "bg-gray-100 p-0 rounded-sm sm:min-w-32",
       }}
       placement="bottom-start"
       offset={OFFSET_MENU}
@@ -65,7 +64,8 @@ export default function PriorityMenu({
       <DropdownTrigger>
         <Button
           radius="sm"
-          className="w-full items-center justify-between gap-3 bg-gray-100 capitalize text-gray-500 sm:w-44"
+          className="items-center justify-between gap-3 bg-gray-100 capitalize text-gray-500 sm:w-fit sm:min-w-40"
+          fullWidth
           endContent={<AlertCircleIcon size={18} className="stroke-gray-500" />}
         >
           {selectedKeys.has(PRIORITY_PLACEHOLDER)
@@ -80,7 +80,7 @@ export default function PriorityMenu({
         onSelectionChange={(keys) => setSelectedKeys(keys as Set<string>)}
         onAction={onClickPriority}
         classNames={{
-          base: "p-0 min-w-full sm:min-w-44",
+          base: "p-0",
           list: "gap-0",
         }}
         aria-label="Priority options"

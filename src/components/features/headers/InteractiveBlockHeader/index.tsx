@@ -41,7 +41,7 @@ export default function InteractiveBlockHeader({
   };
 
   return (
-    <header className="mb-4 flex items-start justify-between">
+    <header className="flex items-start justify-between">
       <InteractiveBlockInfo title={title} priority={priority} date={date} />
       <ActionsMenu actions={actions} onClickAction={onClickAction} />
     </header>

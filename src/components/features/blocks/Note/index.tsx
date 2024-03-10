@@ -38,7 +38,7 @@ export default function Note({ title, priority, date, content }: NoteProps) {
   };
 
   return (
-    <article className="rounded-sm border-1 border-gray-50 bg-gradient-to-b from-white-300 to-white-100 p-7">
+    <article className="block-box block-box-gap block-box-gradient">
       {renderView()}
     </article>
   );

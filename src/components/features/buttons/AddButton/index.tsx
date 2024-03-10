@@ -12,7 +12,6 @@ export default function AddButton({ itemText, onClick }: AddButtonProps) {
   return (
     <Button
       startContent={<PlusIcon size={17} />}
-      fullWidth
       color="primary"
       radius="sm"
       onClick={onClick}

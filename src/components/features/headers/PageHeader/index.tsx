@@ -8,11 +8,7 @@ type PageHeaderProps = {
 };
 
 export default function PageHeader({ children }: PageHeaderProps) {
-  return (
-    <header className="grid grid-cols-6 gap-y-4 rounded-sm bg-white-300 p-6">
-      {children}
-    </header>
-  );
+  return <header className="block-box block-box-gap">{children}</header>;
 }
 
 PageHeader.Title = PageHeaderTitle;

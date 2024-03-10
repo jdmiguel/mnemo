@@ -87,4 +87,25 @@
     @apply before:transition-transform;
     @apply hover:before:scale-x-100;
   }
+
+  .block-box {
+    @apply bg-white-300;
+    @apply grid;
+    @apply grid-cols-24;
+    @apply rounded-sm;
+    @apply border-1;
+    @apply border-gray-50;
+    @apply p-6;
+  }
+
+  .block-box-gradient {
+    @apply bg-gradient-to-b;
+    @apply from-white-300;
+    @apply to-white-100;
+  }
+
+  .block-box-gap {
+    @apply gap-y-3;
+    @apply gap-x-2;
+  }
 }
