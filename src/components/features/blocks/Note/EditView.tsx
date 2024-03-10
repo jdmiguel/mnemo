@@ -52,11 +52,6 @@ export default function EditView({
           onChange={(e) => setSelectedContent(e.target.value)}
         />
       </div>
-      {/* <div className="col-span-12 sm:col-span-5 lg:col-span-4">
-        <SaveButton onClick={onClickSave} />
-      </div>
-      <div className="col-span-12 sm:col-span-5 lg:col-span-4">
-    </div> */}
       <div className="col-span-24 flex gap-2 justify-self-end sm:col-span-5 sm:justify-self-start lg:col-span-12">
         <SaveButton onClick={onClickSave} />
         <CancelButton onClick={onCancel} />
