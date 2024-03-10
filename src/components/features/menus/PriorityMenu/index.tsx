@@ -55,8 +55,9 @@ export default function PriorityMenu({
   return (
     <Dropdown
       classNames={{
-        content: "bg-gray-100 p-0 rounded-sm sm:min-w-32",
+        content: "bg-gray-100 p-0 sm:min-w-40",
       }}
+      radius="sm"
       placement="bottom-start"
       offset={OFFSET_MENU}
       motionProps={ANIMATION.accordion}
