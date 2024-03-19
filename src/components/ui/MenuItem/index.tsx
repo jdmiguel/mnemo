@@ -11,7 +11,7 @@ type MenuItemProps = {
 
 export default function MenuItem({ href, icon, text, active }: MenuItemProps) {
   return (
-    <li className="group z-50 relative h-14 items-center justify-center py-2">
+    <li className="group relative z-50 h-14 items-center justify-center py-2">
       <Link
         href={href}
         className={clsx(

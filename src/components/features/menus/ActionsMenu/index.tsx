@@ -34,14 +34,13 @@ export default function ActionsMenu({
     >
       <DropdownTrigger>
         <Button
-          variant="light"
           radius="sm"
           isIconOnly
-          className="h-auto w-auto min-w-0 p-0 hover:!bg-transparent"
+          className="group h-auto w-auto min-w-0 bg-gray-50 p-2 hover:bg-white-100"
         >
           {
             <MoreVerticalIcon
-              className="fill-transparent stroke-purple-200"
+              className="stroke-purple-100 group-hover:stroke-purple-200"
               size={18}
             />
           }

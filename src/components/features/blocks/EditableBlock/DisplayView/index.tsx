@@ -4,7 +4,7 @@ import { ReactElement, useState } from "react";
 import { useEditableBlock } from "@/contexts/EditableBlockContext";
 import DisplayViewDetails from "./DisplayViewDetails";
 import ToggleArrowIcon from "./ToggleArrowIcon";
-import { ToggleStatus } from "@/types";
+import { ToggleAction } from "@/types";
 
 type DisplayViewProps = {
   children?: ReactElement | ReactElement[];
@@ -13,15 +13,15 @@ type DisplayViewProps = {
 export default function DisplayView({ children }: DisplayViewProps) {
   const { state, dispatch } = useEditableBlock();
 
-  const [toggleStatus, setToggleStatus] = useState<ToggleStatus>("collapsed");
+  const [toggleAction, setToggleAction] = useState<ToggleAction>("expand");
 
   return (
     <div
       className="editable-box box-padding"
       role="button"
       onClick={() =>
-        setToggleStatus((prevStatus) =>
-          prevStatus === "expanded" ? "collapsed" : "expanded",
+        setToggleAction((prevAction) =>
+          prevAction === "expand" ? "collapse" : "expand",
         )
       }
     >
@@ -30,9 +30,9 @@ export default function DisplayView({ children }: DisplayViewProps) {
         onEdit={() => dispatch({ type: "SET_VIEW", view: "edit" })}
         onDelete={() => {}}
       />
-      {toggleStatus === "expanded" && <div className="my-3">{children}</div>}
+      {toggleAction === "collapse" && <div className="my-3">{children}</div>}
       <div className="flex justify-center">
-        <ToggleArrowIcon status={toggleStatus} />
+        <ToggleArrowIcon action={toggleAction} />
       </div>
     </div>
   );

@@ -2,8 +2,7 @@ import type { ExtendedThemeColors, StatusColor } from "./theme";
 import type { View } from "./view";
 import type { Priority } from "./priority";
 import type { BlockDetails, BlockDetailListItem } from "./block";
-import type { VisibilityAction } from "./action";
-import type { ToggleStatus } from "./status";
+import type { VisibilityAction, ToggleAction } from "./action";
 
 export type {
   ExtendedThemeColors,
@@ -13,5 +12,5 @@ export type {
   BlockDetails,
   BlockDetailListItem,
   VisibilityAction,
-  ToggleStatus,
+  ToggleAction,
 };
