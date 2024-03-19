@@ -1,45 +1,20 @@
 "use client";
 
-import { InteractiveBlock } from "@/types";
-import DisplayView from "./DisplayView";
-import EditView from "./EditView";
-import useView from "@/hooks/useView";
+import { EditableBlockContextProvider } from "@/contexts/EditableBlockContext";
+import EditableBlock from "@/components/features/blocks/EditableBlock";
+import NoteDisplayView from "@/components/features/blocks/Note/NoteDisplayView";
+import NoteEditView from "@/components/features/blocks/Note/NoteEditView";
+import { BlockDetails } from "@/types";
 
-type NoteProps = InteractiveBlock;
+type NoteProps = BlockDetails;
 
-export default function Note({ title, priority, date, content }: NoteProps) {
-  const { view, updateView } = useView();
-
-  const viewSharedData = {
-    title,
-    priority,
-    content,
-  };
-
-  const renderView = () => {
-    if (view === "display") {
-      return (
-        <DisplayView
-          {...viewSharedData}
-          date={date}
-          onEdit={() => updateView("edit")}
-          onDelete={() => {}}
-        />
-      );
-    }
-
-    return (
-      <EditView
-        {...viewSharedData}
-        onSave={() => updateView("display")}
-        onCancel={() => updateView("display")}
-      />
-    );
-  };
-
+export default function Note(props: NoteProps) {
   return (
-    <article className="block-box block-box-gap block-box-gradient">
-      {renderView()}
-    </article>
+    <EditableBlockContextProvider details={props}>
+      <EditableBlock
+        displayView={<NoteDisplayView />}
+        editView={<NoteEditView />}
+      />
+    </EditableBlockContextProvider>
   );
 }

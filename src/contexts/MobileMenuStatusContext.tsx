@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import {
   type ReactNode,
   createContext,
@@ -8,6 +7,7 @@ import {
   useEffect,
   useContext,
 } from "react";
+import { usePathname } from "next/navigation";
 
 const MobileMenuStatusContext = createContext({
   isOpen: false,

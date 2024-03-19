@@ -1,16 +1,17 @@
 import { EyeIcon, EyeOffIcon } from "lucide-react";
 import { Button } from "@nextui-org/button";
+import { VisibilityAction } from "@/types";
 
 type TogglePasswordVisibilityButtonProps = {
-  type: "show" | "hide";
+  action: VisibilityAction;
   onClick: () => void;
 };
 
 export default function TogglePasswordVisibilityButton({
-  type,
+  action,
   onClick,
 }: TogglePasswordVisibilityButtonProps) {
-  const Icon = type === "show" ? EyeIcon : EyeOffIcon;
+  const Icon = action === "show" ? EyeIcon : EyeOffIcon;
 
   return (
     <Button

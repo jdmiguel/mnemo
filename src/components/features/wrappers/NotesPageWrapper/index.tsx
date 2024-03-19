@@ -1,9 +1,9 @@
 import NotesPageHeader from "@/components/features/headers/NotesPageHeader";
 import Note from "@/components/features/blocks/Note";
-import { InteractiveBlock } from "@/types/interactiveBlock";
+import { BlockDetails } from "@/types/block";
 
 type NotesPageWrapperProps = {
-  notes: InteractiveBlock[];
+  notes: BlockDetails[];
 };
 
 export default function NotesPageWrapper({ notes }: NotesPageWrapperProps) {
