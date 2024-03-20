@@ -114,7 +114,7 @@ export default function SignUpForm() {
         }
         endContent={
           <TogglePasswordVisibilityButton
-            type={isPasswordVisible ? "hide" : "show"}
+            action={isPasswordVisible ? "hide" : "show"}
             onClick={() =>
               setIsPasswordVisible((isPasswordVisible) => !isPasswordVisible)
             }
