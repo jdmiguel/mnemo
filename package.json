@@ -9,7 +9,8 @@
     "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "prepare": "husky"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.3",
@@ -54,10 +55,13 @@
     "bcrypt": "^5.1.1",
     "eslint": "^8.47.0",
     "eslint-config-next": "^14.0.4",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "postcss": "^8.4.32",
     "prettier": "^3.0.0",
     "prettier-plugin-tailwindcss": "^0.5.1",
     "tailwindcss": "^3.4.0",
+    "tsc-files": "^1.1.4",
     "typescript": "^5.1.6"
   },
   "ct3aMetadata": {
