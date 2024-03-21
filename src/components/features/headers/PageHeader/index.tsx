@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import PageHeaderTitle from "./PageHeaderTitle";
-import PageHeaderActions from "./PageHeaderActions";
+import PageHeaderAction from "./PageHeaderAction";
 import PageHeaderFilters from "./PageHeaderFilters";
 
 type PageHeaderProps = {
@@ -14,5 +14,5 @@ export default function PageHeader({ children }: PageHeaderProps) {
 }
 
 PageHeader.Title = PageHeaderTitle;
-PageHeader.Actions = PageHeaderActions;
+PageHeader.Action = PageHeaderAction;
 PageHeader.Filters = PageHeaderFilters;
