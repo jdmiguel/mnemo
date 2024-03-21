@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -17,6 +18,8 @@ type UserMenuProps = {
 };
 
 export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   const userImage = {
     ...(imageSrc ? { src: imageSrc } : { name: name.substring(0, 2) }),
   };
@@ -25,6 +28,8 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
     <Dropdown
       classNames={{ base: "max-w-56" }}
       placement="bottom-end"
+      isOpen={isOpen}
+      onOpenChange={(open) => setIsOpen(open)}
       showArrow
       offset={OFFSET_MENU}
       motionProps={ANIMATION.speechBubble}
@@ -34,6 +39,7 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
           as="button"
           color="primary"
           className="text-small uppercase transition-transform"
+          onClick={() => setIsOpen(true)}
           {...userImage}
         />
       </DropdownTrigger>

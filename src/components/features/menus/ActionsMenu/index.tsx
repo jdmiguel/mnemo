@@ -1,4 +1,4 @@
-import { Key } from "react";
+import { Key, useState } from "react";
 import {
   Dropdown,
   DropdownTrigger,
@@ -24,19 +24,26 @@ export default function ActionsMenu({
   actions,
   onClickAction,
 }: ActionsMenuProps) {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Dropdown
       classNames={{
         content: "bg-gray-100 p-0 rounded-sm w-full sm:min-w-fit",
       }}
+      isOpen={isOpen}
+      onOpenChange={(open) => setIsOpen(open)}
       placement="bottom-end"
       motionProps={ANIMATION.speechBubble}
+      shouldBlockScroll
+      shouldCloseOnBlur
     >
       <DropdownTrigger>
         <Button
           radius="sm"
           isIconOnly
           className="group h-auto w-auto min-w-0 bg-gray-50 p-2 hover:bg-white-100"
+          onClick={() => setIsOpen(true)}
         >
           {
             <MoreVerticalIcon

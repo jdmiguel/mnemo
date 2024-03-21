@@ -43,6 +43,7 @@ export default function PriorityMenu({
     [],
   );
 
+  const [isOpen, setIsOpen] = useState(false);
   const [selectedKeys, setSelectedKeys] = useState(
     new Set([defaultPriority ?? PRIORITY_PLACEHOLDER]),
   );
@@ -58,9 +59,13 @@ export default function PriorityMenu({
         content: "bg-gray-100 p-0 sm:min-w-40",
       }}
       radius="sm"
+      isOpen={isOpen}
+      onOpenChange={(open) => setIsOpen(open)}
       placement="bottom-start"
       offset={OFFSET_MENU}
       motionProps={ANIMATION.accordion}
+      shouldBlockScroll
+      shouldCloseOnBlur
     >
       <DropdownTrigger>
         <Button
@@ -68,6 +73,7 @@ export default function PriorityMenu({
           className="items-center justify-between gap-3 bg-gray-100 capitalize text-gray-500 sm:w-fit sm:min-w-40"
           fullWidth
           endContent={<AlertCircleIcon size={18} className="stroke-gray-500" />}
+          onClick={() => setIsOpen(true)}
         >
           {selectedKeys.has(PRIORITY_PLACEHOLDER)
             ? PRIORITY_PLACEHOLDER
