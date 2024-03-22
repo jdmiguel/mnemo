@@ -6,6 +6,7 @@ import {
   DropdownSection,
   DropdownItem,
 } from "@nextui-org/dropdown";
+import { Button } from "@nextui-org/button";
 import { Avatar } from "@nextui-org/avatar";
 import ThemeButton from "@/components/features/buttons/ThemeButton";
 import SignOutButton from "@/components/features/buttons/SignOutButton";
@@ -35,13 +36,17 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
       motionProps={ANIMATION.speechBubble}
     >
       <DropdownTrigger>
-        <Avatar
-          as="button"
-          color="primary"
-          className="text-small uppercase transition-transform"
+        <Button
+          className="min-w-0 px-0 data-[hover=true]:bg-transparent"
+          variant="light"
           onClick={() => setIsOpen(true)}
-          {...userImage}
-        />
+        >
+          <Avatar
+            color="primary"
+            className="text-small uppercase transition-transform"
+            {...userImage}
+          />
+        </Button>
       </DropdownTrigger>
       <DropdownMenu
         aria-label="User Actions"
@@ -52,14 +57,18 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
           title="Signed in as"
           classNames={{ base: "mb-5", group: "data-[has-title=true]:pt-0" }}
         >
-          <DropdownItem key="profile" className="py-0 opacity-hover">
+          <DropdownItem
+            key="profile"
+            className="py-0 opacity-hover"
+            textValue={email}
+          >
             <p className="truncate text-black-200">{email}</p>
           </DropdownItem>
         </DropdownSection>
-        <DropdownItem key="theme" className="mb-2 p-0">
+        <DropdownItem key="theme" className="mb-2 p-0" textValue="theme button">
           <ThemeButton />
         </DropdownItem>
-        <DropdownItem key="signOut" className="p-0">
+        <DropdownItem key="signOut" className="p-0" textValue="sign out button">
           <SignOutButton />
         </DropdownItem>
       </DropdownMenu>
