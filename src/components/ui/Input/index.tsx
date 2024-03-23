@@ -13,6 +13,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
       ref={ref}
       radius="sm"
       classNames={{
+        base: "static",
         label: "text-purple-100 dark:text-purple-100 font-bold text-sm",
         input: [
           "bg-transparent",
@@ -20,6 +21,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
           "placeholder:text-gray-500 dark:placeholder:text-gray-300",
         ],
         inputWrapper: [
+          "static",
           "bg-gray-100 dark:bg-black-100",
           "hover:!bg-opacity-75",
           "data-[hover=true]:bg-gray-100 data-[hover=true]:dark:bg-black-100",

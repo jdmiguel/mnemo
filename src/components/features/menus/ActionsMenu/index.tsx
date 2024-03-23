@@ -44,6 +44,7 @@ export default function ActionsMenu({
           isIconOnly
           className="group h-auto w-auto min-w-0 bg-gray-50 p-2 hover:bg-white-100"
           onClick={() => setIsOpen(true)}
+          onMouseOver={(e) => e.stopPropagation()}
         >
           {
             <MoreVerticalIcon
