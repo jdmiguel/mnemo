@@ -1,10 +1,10 @@
 "use client";
 
 import clsx from "clsx";
+import { Button } from "@nextui-org/button";
 import { XIcon } from "lucide-react";
 import { useMobileMenuStatus } from "@/contexts/MobileMenuStatusContext";
 import AppMenu from "@/components/features/menus/AppMenu";
-import { Button } from "@nextui-org/button";
 
 export default function AppMobileMenuLayout() {
   const { isOpen, updateStatus } = useMobileMenuStatus();
