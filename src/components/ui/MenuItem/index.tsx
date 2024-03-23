@@ -11,20 +11,26 @@ type MenuItemProps = {
 
 export default function MenuItem({ href, icon, text, active }: MenuItemProps) {
   return (
-    <li className="group relative z-50 h-14 items-center justify-center py-2">
+    <li
+      className={clsx(
+        "group relative z-50 h-14 items-center justify-center py-2",
+        {
+          "pointer-events-none relative before:absolute before:-left-0.5 before:top-0 before:h-full before:w-1 before:bg-purple-200":
+            active,
+        },
+      )}
+    >
       <Link
         href={href}
         className={clsx(
-          "flex !h-full !min-w-0 items-center justify-center gap-6 bg-transparent !px-unit-2 text-purple-100 hover:bg-white-50 hover:text-purple-200",
-          {
-            "pointer-events-none bg-white-50 !text-purple-200": active,
-          },
+          "flex !h-full !min-w-0 items-center justify-center gap-6 bg-transparent text-gray-600 hover:text-black-50",
+          { "text-black-100": active },
         )}
       >
         {icon}
       </Link>
       <Chip
-        color="primary"
+        color="default"
         radius="sm"
         className={clsx(
           "pointer-events-none absolute left-14 top-3.5 z-10 origin-left scale-x-0 transition-transform ease-soft-spring",
