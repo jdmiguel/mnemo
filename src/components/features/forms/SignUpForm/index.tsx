@@ -70,7 +70,7 @@ export default function SignUpForm() {
         placeholder="John Doe"
         startContent={
           <UserIcon
-            className="stroke-gray-400 dark:stroke-gray-200"
+            className="stroke-gray-500 dark:stroke-gray-300"
             size={15}
           />
         }
@@ -87,7 +87,7 @@ export default function SignUpForm() {
         placeholder="johndoe@gmail.com"
         startContent={
           <MailIcon
-            className="stroke-gray-400 dark:stroke-gray-300"
+            className="stroke-gray-500 dark:stroke-gray-400"
             size={15}
           />
         }
@@ -108,7 +108,7 @@ export default function SignUpForm() {
         placeholder="············"
         startContent={
           <LockKeyholeIcon
-            className="stroke-gray-400 dark:stroke-gray-200"
+            className="stroke-gray-500 dark:stroke-gray-300"
             size={15}
           />
         }

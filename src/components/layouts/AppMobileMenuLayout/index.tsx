@@ -18,7 +18,7 @@ export default function AppMobileMenuLayout() {
         },
       )}
     >
-      <div className="flex w-full justify-end border-gray-300 px-3 py-2">
+      <div className="flex w-full justify-end border-gray-400 px-3 py-2">
         <Button
           color="primary"
           variant="light"

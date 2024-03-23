@@ -29,7 +29,7 @@ export default function ActionsMenu({
   return (
     <Dropdown
       classNames={{
-        content: "bg-gray-100 p-0 rounded-sm w-full sm:min-w-fit",
+        content: "bg-gray-200 p-0 rounded-sm w-full sm:min-w-fit",
       }}
       isOpen={isOpen}
       onOpenChange={(open) => setIsOpen(open)}
@@ -42,7 +42,7 @@ export default function ActionsMenu({
         <Button
           radius="sm"
           isIconOnly
-          className="group h-auto w-auto min-w-0 bg-gray-50 p-2 hover:bg-white-100"
+          className="group h-auto w-auto min-w-0 bg-transparent p-2 transition-background hover:bg-gray-100"
           onClick={() => setIsOpen(true)}
           onMouseOver={(e) => e.stopPropagation()}
         >

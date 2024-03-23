@@ -15,7 +15,7 @@ export default function DisplayView({ children }: DisplayViewProps) {
   const { state, dispatch } = useEditableBlock();
 
   const [isHovered, setIsHovered] = useState(false);
-  const [toggleAction, setToggleAction] = useState<ToggleAction>("expand");
+  const [toggleAction, setToggleAction] = useState<ToggleAction>("collapse");
 
   return (
     <div

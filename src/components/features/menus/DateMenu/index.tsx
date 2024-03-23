@@ -70,8 +70,8 @@ export default function DateMenu() {
       <PopoverTrigger>
         <Button
           radius="sm"
-          className="w-full items-center justify-between gap-3 bg-gray-100 text-gray-500 sm:w-56"
-          endContent={<CalendarIcon size={18} className="stroke-gray-500" />}
+          className="w-full items-center justify-between gap-3 bg-gray-200 text-gray-600 sm:w-56"
+          endContent={<CalendarIcon size={18} className="stroke-gray-600" />}
           onClick={() => setIsOpen(true)}
         >
           {selectedDateText}

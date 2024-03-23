@@ -68,7 +68,7 @@ export default function SignInForm() {
         placeholder="johndoe@gmail.com"
         startContent={
           <MailIcon
-            className="stroke-gray-400 dark:stroke-gray-300"
+            className="stroke-gray-500 dark:stroke-gray-400"
             size={15}
           />
         }
@@ -92,7 +92,7 @@ export default function SignInForm() {
         placeholder="············"
         startContent={
           <LockKeyholeIcon
-            className="stroke-gray-400 dark:stroke-gray-200"
+            className="stroke-gray-500 dark:stroke-gray-300"
             size={15}
           />
         }

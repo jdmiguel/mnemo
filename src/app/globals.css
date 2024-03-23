@@ -49,15 +49,15 @@
   .text-small {
     @apply text-sm;
     @apply font-normal;
-    @apply text-gray-500;
-    @apply dark:text-gray-200;
+    @apply text-gray-600;
+    @apply dark:text-gray-300;
     @apply text-balance;
   }
 
   .text-detail {
     @apply text-base;
     @apply font-normal;
-    @apply text-gray-400;
+    @apply text-gray-500;
     @apply uppercase;
   }
 

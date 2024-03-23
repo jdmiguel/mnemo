@@ -15,7 +15,7 @@ export default function SearchInput({
     <Input
       type="text"
       className="sm:w-fit"
-      endContent={<SearchIcon className="stroke-gray-500" size={18} />}
+      endContent={<SearchIcon className="stroke-gray-600" size={18} />}
       placeholder={`Search ${searchType} by title`}
       isLowHeight
       onChange={onSearch}

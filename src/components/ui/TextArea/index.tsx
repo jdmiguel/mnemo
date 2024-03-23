@@ -13,7 +13,7 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           base: "!bg-transparent rounded-lg",
           input: [
             "!text-black-50 dark:text-gray-100",
-            "placeholder:text-gray-500 dark:placeholder:text-gray-300",
+            "placeholder:text-gray-600 dark:placeholder:text-gray-400",
             "min-h-16",
           ],
           inputWrapper: [

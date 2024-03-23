@@ -14,8 +14,8 @@ type FormHeaderProps = {
 export default function FormHeader({ title, text, link }: FormHeaderProps) {
   return (
     <header>
-      <h1 className="heading-1 mb-2 text-center">{title}</h1>
-      <p className="mb-10 flex gap-1 text-large">
+      <h1 className="heading-2 mb-1 text-center">{title}</h1>
+      <p className="mb-6 flex gap-1 text-large">
         {text}
         <Link href={link.href} isTextOnly>
           {link.text}

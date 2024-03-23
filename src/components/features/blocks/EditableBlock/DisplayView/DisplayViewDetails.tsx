@@ -22,12 +22,12 @@ export default function DisplayViewDetails({
       {
         key: "edit",
         label: "Edit",
-        icon: <EditIcon className="stroke-gray-500" size={18} />,
+        icon: <EditIcon className="stroke-gray-600" size={18} />,
       },
       {
         key: "delete",
         label: "Delete",
-        icon: <TrashIcon className="stroke-gray-500" size={18} />,
+        icon: <TrashIcon className="stroke-gray-600" size={18} />,
       },
     ],
     [],

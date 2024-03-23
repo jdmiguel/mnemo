@@ -70,9 +70,9 @@ export default function PriorityMenu({
       <DropdownTrigger>
         <Button
           radius="sm"
-          className="items-center justify-between gap-3 bg-gray-100 capitalize text-gray-500 sm:w-fit sm:min-w-40"
+          className="items-center justify-between gap-3 bg-gray-200 capitalize text-gray-600 sm:w-fit sm:min-w-40"
           fullWidth
-          endContent={<AlertCircleIcon size={18} className="stroke-gray-500" />}
+          endContent={<AlertCircleIcon size={18} className="stroke-gray-600" />}
           onClick={() => setIsOpen(true)}
         >
           {selectedKeys.has(PRIORITY_PLACEHOLDER)
@@ -95,7 +95,7 @@ export default function PriorityMenu({
         {(item) => (
           <DropdownItem
             key={item.key}
-            className="mb-0 p-3 after:bottom-0 after:bg-white-200 data-[selectable=true]:focus:rounded-none data-[selectable=true]:focus:bg-gray-50 data-[selectable=true]:focus:text-gray-500"
+            className="mb-0 p-3 after:bottom-0 after:bg-white-200 data-[selectable=true]:focus:rounded-none data-[selectable=true]:focus:bg-gray-50 data-[selectable=true]:focus:text-gray-600"
             startContent={
               <AlertCircleIcon
                 className="data-[key=critical]:stroke-red-100 data-[key=high]:stroke-orange data-[key=low]:stroke-green-100 data-[key=medium]:stroke-yellow"
