@@ -10,8 +10,8 @@ import {
   Calendar,
 } from "lucide-react";
 import LogoIcon from "@/components/ui/LogoIcon";
-import MenuItem from "@/components/ui/MenuItem";
-import MobileMenuItem from "@/components/ui/MenuItem/MobileMenuItem";
+import MenuItem from "./MenuItem";
+import MobileMenuItem from "./MenuItem/MobileMenuItem";
 
 const iconProps = {
   size: 28,

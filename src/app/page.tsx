@@ -5,7 +5,6 @@ import { getServerAuthSession } from "@/server/auth";
 import Header from "@/components/ui/Header";
 import Link from "@/components/ui/Link";
 import InfoPanel from "@/components/ui/InfoPanel";
-import Footer from "@/components/ui/Footer";
 
 export default async function HomePage() {
   const session = await getServerAuthSession();
@@ -24,7 +23,7 @@ export default async function HomePage() {
           </p>
           <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:[&_a]:flex-1">
             <Link color="primary" radius="sm" href="./auth/signin">
-            <LogInIcon size={17}/>
+              <LogInIcon size={17} />
               Log in
             </Link>
             <Link
@@ -34,7 +33,7 @@ export default async function HomePage() {
               variant="flat"
               data-variant="flat"
             >
-              <PenSquareIcon size={17}/>
+              <PenSquareIcon size={17} />
               Sign up
             </Link>
           </div>
@@ -71,7 +70,29 @@ export default async function HomePage() {
         </div>
       </div>
       <div className="col-start-3 col-end-23">
-        <Footer />
+        <footer className="flex w-full flex-col items-center justify-center bg-white-200 p-6 text-large sm:flex-row">
+          <div>
+            <span>@2024</span>
+            <span className="before:content-['|']">created by </span>
+            <a
+              href="https:jdmiguel.com"
+              target="blank"
+              className="linkTextOnly"
+            >
+              jdmiguel{" "}
+            </a>
+          </div>
+          <div className="hidden before:content-['|'] sm:block">
+            view repo on{" "}
+            <a
+              href="https://github.com/jdmiguel/mnemo"
+              target="blank"
+              className="link-textOnly"
+            >
+              github
+            </a>
+          </div>
+        </footer>
       </div>
     </div>
   );
