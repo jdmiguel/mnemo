@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import Link from "@/components/ui/Link";
-import { Chip } from "@nextui-org/chip";
+import { Tooltip } from "@nextui-org/tooltip";
+import { ANIMATION } from "@/utils";
 
 type MenuItemProps = {
   href: string;
@@ -20,27 +21,25 @@ export default function MenuItem({ href, icon, text, active }: MenuItemProps) {
         },
       )}
     >
-      <Link
-        href={href}
-        className={clsx(
-          "flex !h-full !min-w-0 items-center justify-center gap-6 bg-transparent text-gray-600 hover:text-black-50",
-          { "text-black-100": active },
-        )}
-      >
-        {icon}
-      </Link>
-      <Chip
-        color="default"
+      <Tooltip
+        content={text}
+        color="primary"
         radius="sm"
-        className={clsx(
-          "pointer-events-none absolute left-14 top-3.5 z-10 origin-left scale-x-0 transition-transform ease-soft-spring",
-          {
-            "group-hover:scale-x-100": !active,
-          },
-        )}
+        placement="right"
+        offset={-3}
+        showArrow
+        motionProps={ANIMATION.scaleXInFromLeft}
       >
-        {text}
-      </Chip>
+        <Link
+          href={href}
+          className={clsx(
+            "flex !h-full !min-w-0 items-center justify-center gap-6 bg-transparent text-gray-600 hover:text-black-100",
+            { "!text-black-100": active },
+          )}
+        >
+          {icon}
+        </Link>
+      </Tooltip>
     </li>
   );
 }

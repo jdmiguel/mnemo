@@ -1,34 +1,33 @@
-"use client";
-
+import { ReactNode, ReactElement, forwardRef, Ref } from "react";
 import clsx from "clsx";
-import type { LinkProps } from "next/link";
+import DefaultLink, { type LinkProps as DefaultLinkProps } from "next/link";
 import { type ButtonProps, useButton } from "@nextui-org/button";
-import Link from "next/link";
 
-type MnemoLinkSize = "small" | "normal";
+type LinkSize = "small" | "normal";
 
-type MnemoLinkProps = LinkProps &
+type LinkProps = DefaultLinkProps &
   ButtonProps & {
     isTextOnly?: boolean;
-    textSize?: MnemoLinkSize;
+    textSize?: LinkSize;
     className?: string;
+    children: ReactNode | ReactElement;
   };
 
-export default function MnemoLink({
-  isTextOnly = false,
-  className = "",
-  ...props
-}: MnemoLinkProps) {
+export default forwardRef<HTMLAnchorElement, LinkProps>(function Link(
+  { isTextOnly = false, className = "", children, ...props },
+  ref,
+) {
   const { styles: buttonStyles } = useButton(props);
 
   const defaultStyles = isTextOnly ? "link-textOnly" : `${buttonStyles} link`;
 
   return (
-    <Link
+    <DefaultLink
+      {...(props as DefaultLinkProps)}
+      ref={ref}
       className={clsx(defaultStyles, className, "font-medium")}
-      {...(props as LinkProps)}
     >
-      {props.children}
-    </Link>
+      {children}
+    </DefaultLink>
   );
-}
+});

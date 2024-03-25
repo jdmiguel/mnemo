@@ -91,7 +91,8 @@
   .box-grid {
     @apply grid;
     @apply grid-cols-24;
-    @apply gap-y-3;
+    @apply gap-y-4;
+    @apply sm:gap-y-3;
     @apply gap-x-2;
   }
 

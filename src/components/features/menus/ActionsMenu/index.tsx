@@ -34,7 +34,7 @@ export default function ActionsMenu({
       isOpen={isOpen}
       onOpenChange={(open) => setIsOpen(open)}
       placement="bottom-end"
-      motionProps={ANIMATION.speechBubble}
+      motionProps={ANIMATION.scaleInFromTopRight}
       shouldBlockScroll
       shouldCloseOnBlur
     >
@@ -72,6 +72,7 @@ export default function ActionsMenu({
             }}
             startContent={action.icon}
             showDivider={action.key !== actions.at(-1)?.key}
+            onMouseOver={(e) => e.stopPropagation()}
           >
             {action.label}
           </DropdownItem>

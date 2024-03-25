@@ -56,7 +56,7 @@ export default function PriorityMenu({
   return (
     <Dropdown
       classNames={{
-        content: "bg-gray-100 p-0 sm:min-w-40",
+        content: "bg-gray-100 p-0 sm:min-w-44",
       }}
       radius="sm"
       isOpen={isOpen}
@@ -95,7 +95,7 @@ export default function PriorityMenu({
         {(item) => (
           <DropdownItem
             key={item.key}
-            className="mb-0 p-3 after:bottom-0 after:bg-white-200 data-[selectable=true]:focus:rounded-none data-[selectable=true]:focus:bg-gray-50 data-[selectable=true]:focus:text-gray-600"
+            className="mb-0 bg-gray-200 p-3 after:bottom-0 after:bg-white-200 data-[selectable=true]:focus:rounded-none data-[selectable=true]:focus:bg-gray-100 data-[selectable=true]:focus:text-gray-600"
             startContent={
               <AlertCircleIcon
                 className="data-[key=critical]:stroke-red-100 data-[key=high]:stroke-orange data-[key=low]:stroke-green-100 data-[key=medium]:stroke-yellow"

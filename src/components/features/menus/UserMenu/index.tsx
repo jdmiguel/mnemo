@@ -33,7 +33,7 @@ export default function UserMenu({ name, email, imageSrc }: UserMenuProps) {
       onOpenChange={(open) => setIsOpen(open)}
       showArrow
       offset={OFFSET_MENU}
-      motionProps={ANIMATION.speechBubble}
+      motionProps={ANIMATION.scaleInFromTopRight}
     >
       <DropdownTrigger>
         <Button
