@@ -1,3 +1,5 @@
+"use client";
+
 import { ReactNode, ReactElement, forwardRef } from "react";
 import clsx from "clsx";
 import DefaultLink, { type LinkProps as DefaultLinkProps } from "next/link";
