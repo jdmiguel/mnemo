@@ -1,5 +1,3 @@
-"use client";
-
 import { EditableBlockContextProvider } from "@/contexts/EditableBlockContext";
 import EditableBlock from "@/components/features/blocks/EditableBlock";
 import NoteDisplayView from "@/components/features/blocks/Note/NoteDisplayView";

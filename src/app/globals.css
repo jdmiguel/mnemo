@@ -57,7 +57,7 @@
   .text-detail {
     @apply text-base;
     @apply font-normal;
-    @apply text-gray-500;
+    @apply text-gray-600;
     @apply uppercase;
   }
 
@@ -91,9 +91,7 @@
   .box-grid {
     @apply grid;
     @apply grid-cols-24;
-    @apply gap-y-4;
-    @apply sm:gap-y-3;
-    @apply gap-x-2;
+    @apply gap-3;
   }
 
   .box-padding {
@@ -105,6 +103,6 @@
     @apply border-gray-50;
     @apply bg-gradient-to-b;
     @apply from-white-300;
-    @apply to-white-100;
+    @apply to-white-200;
   }
 }

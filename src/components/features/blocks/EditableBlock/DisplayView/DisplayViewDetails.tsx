@@ -1,20 +1,15 @@
 import { useMemo, Key } from "react";
 import { EditIcon, TrashIcon } from "lucide-react";
-import ActionsMenu from "@/components/features/menus/ActionsMenu";
 import { Chip } from "@nextui-org/chip";
+import ActionsMenu from "@/components/features/menus/ActionsMenu";
+import { useEditableBlock } from "@/contexts/EditableBlockContext";
 import { PRIORITY_COLOR } from "@/utils";
-import { BlockDetails } from "@/types";
 
-type DisplayViewDetailsProps = Omit<BlockDetails, "id" | "content"> & {
-  onEdit: () => void;
-  onDelete: () => void;
+type DisplayViewDetailsProps = {
+  onDelete: (id: number) => void;
 };
 
 export default function DisplayViewDetails({
-  title,
-  priority,
-  date,
-  onEdit,
   onDelete,
 }: DisplayViewDetailsProps) {
   const actions = useMemo(
@@ -33,7 +28,15 @@ export default function DisplayViewDetails({
     [],
   );
 
-  const onClickAction = (key: Key) => (key === "edit" ? onEdit() : onDelete());
+  const {
+    state: { id, title, priority, date },
+    dispatch,
+  } = useEditableBlock();
+
+  const onEdit = () => dispatch({ type: "SET_VIEW", view: "edit" });
+
+  const onClickAction = (key: Key) =>
+    key === "edit" ? onEdit() : onDelete(id);
 
   return (
     <div className="col-span-24 flex w-full items-start justify-between">

@@ -17,9 +17,9 @@ export default function AppHeader() {
   const { updateStatus: updateMobileMenuStatus } = useMobileMenuStatus();
 
   return (
-    <header className="bg-white-500 sticky flex min-h-14 w-full items-center justify-between border-b-1 border-gray-50 py-2 pl-5 pr-3 text-sm dark:border-black-50 md:pl-7 md:pr-5">
+    <header className="bg-white-500 sticky flex min-h-14 w-full items-center justify-between border-b-1 border-gray-50 py-2 pl-5 pr-3 text-sm dark:border-black-50 lg:pl-7 lg:pr-5">
       <div className="flex items-center gap-4">
-        <h1 className="w-8 md:hidden">
+        <h1 className="w-8 lg:hidden">
           <LogoIcon />
         </h1>
         <p className="text-small capitalize">{breadcrumbs}</p>
@@ -30,7 +30,7 @@ export default function AppHeader() {
           email={session?.user?.email ?? ""}
           imageSrc={session?.user?.image ?? ""}
         />
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <Button
             color="primary"
             variant="light"

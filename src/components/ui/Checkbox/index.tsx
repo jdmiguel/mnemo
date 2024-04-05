@@ -1,5 +1,4 @@
-import type { CheckboxProps } from "@nextui-org/checkbox";
-import { Checkbox } from "@nextui-org/checkbox";
+import { Checkbox, type CheckboxProps } from "@nextui-org/checkbox";
 
 export default function MnemoCheckbox(props: CheckboxProps) {
   return (

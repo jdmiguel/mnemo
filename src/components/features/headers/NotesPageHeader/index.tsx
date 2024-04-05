@@ -1,17 +1,21 @@
-"use client";
-
 import PageHeader from "@/components/features/headers/PageHeader";
 import AddButton from "@/components/features/buttons/AddButton";
 import SearchInput from "@/components/features/inputs/SearchInput";
 import PriorityMenu from "@/components/features/menus/PriorityMenu";
 import DateMenu from "@/components/features/menus/DateMenu";
 
-export default function NotesPageHeader() {
+type NotesPageHeaderProps = {
+  onAddNewNote: () => void;
+};
+
+export default function NotesPageHeader({
+  onAddNewNote,
+}: NotesPageHeaderProps) {
   return (
     <PageHeader>
       <PageHeader.Title>Notes</PageHeader.Title>
       <PageHeader.Action>
-        <AddButton itemText="note" onClick={() => {}} />
+        <AddButton itemText="note" onClick={onAddNewNote} />
       </PageHeader.Action>
       <PageHeader.Filters>
         <SearchInput searchType="note" onSearch={() => {}} />

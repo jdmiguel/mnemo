@@ -1,19 +1,15 @@
-"use client";
-
 import { ReactElement, useState } from "react";
 import clsx from "clsx";
-import { useEditableBlock } from "@/contexts/EditableBlockContext";
 import DisplayViewDetails from "./DisplayViewDetails";
 import ToggleArrowIcon from "./ToggleArrowIcon";
 import { ToggleAction } from "@/types";
 
 type DisplayViewProps = {
   children?: ReactElement | ReactElement[];
+  onDelete: (_: number) => void;
 };
 
-export default function DisplayView({ children }: DisplayViewProps) {
-  const { state, dispatch } = useEditableBlock();
-
+export default function DisplayView({ children, onDelete }: DisplayViewProps) {
   const [isHovered, setIsHovered] = useState(false);
   const [toggleAction, setToggleAction] = useState<ToggleAction>("collapse");
 
@@ -29,12 +25,8 @@ export default function DisplayView({ children }: DisplayViewProps) {
       onMouseOver={() => setIsHovered(true)}
       onMouseOut={() => setIsHovered(false)}
     >
-      <DisplayViewDetails
-        {...state}
-        onEdit={() => dispatch({ type: "SET_VIEW", view: "edit" })}
-        onDelete={() => {}}
-      />
-      {toggleAction === "collapse" && <div className="my-3">{children}</div>}
+      <DisplayViewDetails onDelete={onDelete} />
+      {toggleAction === "collapse" && <div className="mt-3">{children}</div>}
       <div
         className={clsx("flex justify-center opacity-0 transition-opacity", {
           "opacity-100": isHovered,

@@ -1,6 +1,5 @@
-import NotesPageHeader from "@/components/features/headers/NotesPageHeader";
-import Note from "@/components/features/blocks/Note";
 import { Priority } from "@/types";
+import NotesWrapper from "@/components/features/wrappers/NotesWrapper";
 
 export default function NotesPage() {
   const mockedNotes = [
@@ -34,14 +33,5 @@ export default function NotesPage() {
     },
   ];
 
-  return (
-    <>
-      <NotesPageHeader />
-      <div className="mt-7 flex flex-col gap-6">
-        {mockedNotes.map((note) => (
-          <Note key={note.id} {...note} />
-        ))}
-      </div>
-    </>
-  );
+  return <NotesWrapper notes={mockedNotes} />;
 }

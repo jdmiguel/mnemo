@@ -1,1 +1,1 @@
-export const OFFSET_MENU = 8;
+export const OFFSET_MENU = 10;

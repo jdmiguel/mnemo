@@ -12,7 +12,7 @@ export default function AppMobileMenuLayout() {
   return (
     <aside
       className={clsx(
-        "absolute left-0 top-0 z-20 flex h-full w-full flex-col bg-gray-100 dark:bg-black-100 md:hidden",
+        "absolute left-0 top-0 z-20 flex h-full w-full flex-col bg-gray-100 dark:bg-black-100 lg:hidden",
         {
           invisible: !isOpen,
         },

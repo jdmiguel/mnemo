@@ -6,8 +6,12 @@ export default function NoteDisplayView() {
     state: { content },
   } = useEditableBlock();
 
+  const onDelete = (id: number) => {
+    // server action to delete note by passing id
+  };
+
   return (
-    <DisplayView>
+    <DisplayView onDelete={onDelete}>
       <p className="text-medium">{content as string}</p>
     </DisplayView>
   );
