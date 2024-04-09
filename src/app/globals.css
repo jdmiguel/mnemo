@@ -98,7 +98,7 @@
     @apply p-6;
   }
 
-  .editable-box {
+  .box-bg {
     @apply border-1;
     @apply border-gray-50;
     @apply bg-gradient-to-b;

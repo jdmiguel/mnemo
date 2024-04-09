@@ -15,7 +15,7 @@ export default function DisplayView({ children, onDelete }: DisplayViewProps) {
 
   return (
     <div
-      className="editable-box box-padding"
+      className="box-bg box-padding"
       role="button"
       onClick={() =>
         setToggleAction((prevAction) =>

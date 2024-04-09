@@ -8,7 +8,7 @@ type EditViewProps = {
 
 export default function EditView({ children, onSave }: EditViewProps) {
   return (
-    <div className="editable-box box-grid box-padding">
+    <div className="box-bg box-grid box-padding">
       {children}
       <EditViewActions onSave={onSave} />
     </div>

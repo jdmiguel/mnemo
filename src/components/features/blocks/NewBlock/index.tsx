@@ -13,7 +13,7 @@ export default function NewBlock({
   onCancel,
 }: NewBlockProps) {
   return (
-    <div className="editable-box box-grid box-padding">
+    <div className="box-bg box-grid box-padding">
       {children}
       <NewBlockActions onSave={onSave} onCancel={onCancel} />
     </div>
